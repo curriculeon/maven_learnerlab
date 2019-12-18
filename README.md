@@ -181,12 +181,12 @@
 * Provide concrete implementations of the `getArray` method in each of these classes.
 
 -
-### Part 10.3 - Refactor `ZipCodeWilmington` class
-* Refactor the `hostLecture` method in the `ZipCodeWilmington` class by removing any intermediate _casting trick(s)_.
+### Part 10.3 - Refactor `Classroom` class
+* Refactor the `hostLecture` method in the `Classroom` class by removing any intermediate _casting trick(s)_.
 
 -
 ### Part 10.0 - Test refactored classes.
-* Ensure that the `TestStudents`, `TestInstructors`, `TestPeople`, `TestZipCodeWilmington` classes were not affected by the refactor.
+* Ensure that the `TestStudents`, `TestInstructors`, `TestPeople`, `TestClassroom` classes were not affected by the refactor.
 
 
 
@@ -212,5 +212,5 @@
 
 
 -
-### Part 12.0 - Test `ZipCodeWilmington`
+### Part 12.0 - Test `Classroom`
 * Ensure the `hostLecture` method can handle objects of type `Educator`.
