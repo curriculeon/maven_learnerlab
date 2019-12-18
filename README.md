@@ -1,5 +1,5 @@
 # Leon's Lengthy Learner Lab 
-* **Objective** - to implement a `ZipCodeWilmington` class which _mediates_ a _composite_ `Students` and `Instructors` _singleton_ reference.
+* **Objective** - to implement a `Classroom` class which _mediates_ a _composite_ `Students` and `Instructors` _singleton_ reference.
 * **Purpose** - to demonstrate the use of
 	* [interfaces](https://stackoverflow.com/questions/1321122/what-is-an-interface-in-java)
 	* [abstract classes](https://stackoverflow.com/questions/1320745/abstract-class-in-java)
@@ -132,13 +132,13 @@
 -
 ### Part 8.0 - Create and Test `Instructors` singleton
 * Use `Part 7` as a reference.
-* Create a `Instructors` singleton which represents the set of instructors at ZipCodeWilmington.
+* Create a `Instructors` singleton which represents the set of instructors.
 * Create a `TestInstructors` class.
 
 
 -
-### Part 9.1 - Create `ZipCodeWilmington` Class
-* Create a `ZipCodeWilmington` singleton.
+### Part 9.1 - Create `Classroom` Class
+* Create a `Classroom` singleton.
 	* The class should declare a field that references the instance of `Students` called `students`.
 	* The class should declare a field that references the instance of `Instructors` called `instructors`.
 	* The class should define a method `hostLecture` which makes use of a `Teacher teacher, double numberOfHours` parameter to host a `lecture` to the composite `personList` field in the `students` reference.
@@ -146,8 +146,8 @@
 	* The class should define a method `getStudyMap` which returns a <u>new instance</u> of a _mapping_ from `Student` objects to `Double` objects, representative of each respective student's `totalStudyTime`.
 
 -
-### Part 9.0 - Test `ZipCodeWilmington`
-* Create a `TestZipCodeWilmington` class.
+### Part 9.0 - Test `Classroom`
+* Create a `Classroom` class.
 	* Create a `testHostLecture` method which ensures that each of the `Student`'s `totalStudyTime` instance variable is incremented by the specified `numberOfHours` upon invoking the `hostLecture` method.
 
 

@@ -2,17 +2,23 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.zipcoder</groupId>
-  <artifactId>interfaces-1</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <groupId>com.github.curriculeon</groupId>
+  <artifactId>learnerlab</artifactId>
+  <version>1.0.0</version>
 
-  <name>interfaces-1</name>
-  <url>http://maven.apache.org</url>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source> <!--compiled from java8-->
+          <target>8</target> <!--compiled to java8-->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 
   <dependencies>
     <dependency>
