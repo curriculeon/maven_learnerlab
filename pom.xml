@@ -12,8 +12,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>8</source> <!--compiled from java8-->
-          <target>8</target> <!--compiled to java8-->
+          <source>11</source> <!--compiled from java8-->
+          <target>11</target> <!--compiled to java8-->
         </configuration>
       </plugin>
     </plugins>
