@@ -1,8 +1,5 @@
 package com.github.curriculeon;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public final class Students extends People{
 
     private static final Students instance = new Students();
