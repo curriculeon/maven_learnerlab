@@ -1,5 +1,8 @@
 package com.github.curriculeon;
 
+import java.util.Iterator;
+import java.util.List;
+
 public final class Students extends People{
 
     private static final Students instance = new Students();
@@ -29,5 +32,10 @@ public final class Students extends People{
     public Student getById(long id)
     {
         return (Student) people.findById(id);
+    }
+
+    public Iterator iterator()
+    {
+        return people.iterator();
     }
 }

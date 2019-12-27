@@ -12,7 +12,6 @@ public class Student extends Person implements Learner{
     @Override
     public void learn(double numberOfHours) {
         totalStudyTime += numberOfHours;
-
     }
 
     @Override

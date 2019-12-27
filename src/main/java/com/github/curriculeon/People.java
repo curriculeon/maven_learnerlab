@@ -63,6 +63,7 @@ public class People implements Iterable {
     }
     @Override
     public Iterator iterator() {
-        return personList.iterator();
+        Iterator iterator = personList.iterator();
+        return iterator;
     }
 }
