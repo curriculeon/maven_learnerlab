@@ -25,11 +25,7 @@ public class Classroom {
 
     public void hostLecture(Teacher teacher, double numberOfHours)
     {
-
-        Iterator iterator = students.iterator();
-        while (iterator.hasNext()) {
-
-            Student student = (Student) iterator.next();
+        for (Student student: students.toArray()) {
             teacher.teach(student, numberOfHours);
             map.put(student, student.getTotalStudyTime());
         }

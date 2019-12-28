@@ -4,28 +4,28 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class People implements Iterable {
+public abstract class People<E extends Person> implements Iterable {
 
-    private List<Person> personList = new LinkedList<>();
+    protected List<E> eList = new LinkedList<>();
 
     public People(){}
 
     public People(List list)
     {
-        personList = list;
+        eList = list;
     }
 
-    public void add (Person person)
+    public void add (E e)
     {
-        personList.add(person);
+        eList.add(e);
     }
 
-    public Person findById (long id)
+    public E findById (long id)
     {
-        Person result = null;
-        for (Person person: personList) {
-            if (person.getId() == id) {
-                result = person;
+        E result = null;
+        for (E e: eList) {
+            if (e.getId() == id) {
+                result = e;
                 break;
             }
         }
@@ -34,36 +34,34 @@ public class People implements Iterable {
 
     public Boolean contains (Person person)
     {
-        return personList.contains(person);
+        return eList.contains(person);
     }
 
     public void remove (Person person)
     {
-        personList.remove(person);
+        eList.remove(person);
     }
 
     public void removeById (long id)
     {
-        personList.remove(findById(id));
+        eList.remove(findById(id));
     }
 
     public void removeAll ()
     {
-        personList.clear();
+        eList.clear();
     }
 
     public int count()
     {
-        return personList.size();
+        return eList.size();
     }
 
-    public Person[] toArray()
-    {
-        return (Person[]) personList.toArray();
-    }
+    public abstract E[] toArray();
+
     @Override
     public Iterator iterator() {
-        Iterator iterator = personList.iterator();
+        Iterator iterator = eList.iterator();
         return iterator;
     }
 }

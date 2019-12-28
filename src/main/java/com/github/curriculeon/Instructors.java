@@ -1,24 +1,42 @@
 package com.github.curriculeon;
 
-public final class Instructors extends People {
+import java.util.ArrayList;
+import java.util.List;
+
+public final class Instructors extends People<Instructor>{
     private static final Instructors instance = new Instructors();
 
-    private People people;
+    private List<Instructor> instructors;
 
     private Instructors()
     {
-        people = new People();
+        instructors = new ArrayList<>();
 
-        Instructor instructor1 = new Instructor(1, "John");
-        people.add(instructor1);
-        Instructor instructor2 = new Instructor(2, "Alice");
-        people.add(instructor2);
-        Instructor instructor3 = new Instructor(3, "Eve");
-        people.add(instructor3);
-        Instructor instructor4 = new Instructor(4, "Bob");
-        people.add(instructor4);
-        Instructor instructor5 = new Instructor(5, "Jim");
-        people.add(instructor5);
+        final Instructor instructor1 = new Instructor(Educator.instructor1.getId(), Educator.instructor1.getName());
+        instructor1.setTimeWorked(Educator.instructor1.getTimeWorked());
+        instructors.add(instructor1);
+        final Instructor instructor2 = new Instructor(Educator.instructor2.getId(), Educator.instructor2.getName());
+        instructor2.setTimeWorked(Educator.instructor2.getTimeWorked());
+        instructors.add(instructor2);
+        final Instructor instructor3 = new Instructor(Educator.instructor3.getId(), Educator.instructor3.getName());
+        instructor3.setTimeWorked(Educator.instructor3.getTimeWorked());
+        instructors.add(instructor3);
+        final Instructor instructor4 = new Instructor(Educator.instructor4.getId(), Educator.instructor4.getName());
+        instructor4.setTimeWorked(Educator.instructor4.getTimeWorked());
+        instructors.add(instructor4);
+        final Instructor instructor5 = new Instructor(Educator.instructor5.getId(), Educator.instructor5.getName());
+        instructor5.setTimeWorked(Educator.instructor5.getTimeWorked());
+        instructors.add(instructor5);
+    }
+
+    @Override
+    public Instructor[] toArray() {
+        Instructor[] result = new Instructor[instructors.size()];
+
+        for (int i = 0; i < instructors.size(); i++)
+            result[i] = instructors.get(i);
+
+        return result;
     }
 
     public static Instructors getInstance(){
@@ -27,6 +45,13 @@ public final class Instructors extends People {
 
     public Instructor getById(long id)
     {
-        return (Instructor) people.findById(id);
+        Instructor result = null;
+        for (Instructor instructor: instructors){
+            if (instructor.getId() == id) {
+                result = instructor;
+                break;
+            }
+        }
+        return result;
     }
 }

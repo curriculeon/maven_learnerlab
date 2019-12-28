@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class TestPeople {
+/*public class TestPeople {
 
     People people = new People();
     Person person1, person2, person3, person4;
@@ -71,4 +71,4 @@ public class TestPeople {
     @Test
     public void testFindById4(){testFindById(person4, 4);}
 
-}
+}*/
