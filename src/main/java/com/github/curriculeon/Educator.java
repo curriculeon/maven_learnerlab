@@ -19,7 +19,7 @@ public enum Educator implements Teacher{
         return timeWorked;
     }
 
-    private Educator(long id, String name, double timeWorked)
+    Educator(long id, String name, double timeWorked)
     {
         this.id = id;
         this.name = name;

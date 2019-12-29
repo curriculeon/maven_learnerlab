@@ -50,12 +50,12 @@ public class TestInstructor {
     {
         //given
         Instructor instructor = new Instructor(1, "Bob");
-        Learner student1 = new Student(1, "John", 20);
-        Learner student2 = new Student(2, "Jim", 30);
-        Learner student3 = new Student(3, "Alice", 40);
-        Learner student4 = new Student(4, "Eve", 50);
+        Student student1 = new Student(1, "John", 20);
+        Student student2 = new Student(2, "Jim", 30);
+        Student student3 = new Student(3, "Alice", 40);
+        Student student4 = new Student(4, "Eve", 50);
 
-        Learner []students = new Student[]{(Student) student1, (Student) student2, (Student) student3, (Student) student4};
+        Learner []students = new Student[]{student1, student2, student3, student4};
 
         //when
         instructor.lecture(students, 40);
