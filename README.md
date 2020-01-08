@@ -1,4 +1,4 @@
-# Leon's Lengthy Learner Lab 
+# Leon's Lengthy Learner Lab
 * **Objective** - to implement a `Classroom` class which _mediates_ a _composite_ `Students` and `Instructors` _singleton_ reference.
 * **Purpose** - to demonstrate the use of
 	* [interfaces](https://stackoverflow.com/questions/1321122/what-is-an-interface-in-java)
