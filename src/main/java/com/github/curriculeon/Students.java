@@ -4,7 +4,7 @@ public class Students extends People {
 
     private static final Students instance = new Students() ;
     private Students() {
-        private People students = new People();
+        People students = new People();
         Person person1 = new Person(1, "Jack");
         Person person2 = new Person(2, "Jenny");
         Person person3 = new Person(3, "Justin");
