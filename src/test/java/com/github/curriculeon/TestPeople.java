@@ -6,7 +6,12 @@ import org.junit.Test;
 public class TestPeople {
     private void TestAdd(Person person){
         //given
-        People people=new People();
+        People people= new People() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            }
+        };
         //When
         people.add(person);
         int expectedSize=1;
@@ -33,7 +38,12 @@ public class TestPeople {
 
     private void TestRemove(Person person){
         //given
-        People people=new People();
+        People people=new People() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            }
+        };
         //When
         Person person1=new Person(3,"Wendy");
         people.add(person1);
@@ -63,7 +73,12 @@ public class TestPeople {
 
     private void TestFindById(long id){
         //given
-        People people=new People();
+        People people=new People() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            }
+        };
         Person person1=new Person(3,"Wendy");
         Person person=new Person(id,"Pit");
         Person person2=new Person(1,"Kate");

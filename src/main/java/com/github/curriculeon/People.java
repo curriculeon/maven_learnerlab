@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class People implements Iterable<Person> {
+public abstract class People <T extends Person> implements Iterable <T> {
     /* The class should instantiate a `List` field of `Person` objects named `personList`.
             * The class should define a method named `add` which adds a `Person` to the `personList`.
             * The class should define a method named `findById` which makes use of a `long id` parameter to return a `Person` object with the respective `id` field.
@@ -18,26 +18,26 @@ public class People implements Iterable<Person> {
             * The class should define a method named `toArray` which returns an array representation of the `personList` field.
 	* The class should implement `Iterable<E>` and define a method named `iterator` which makes use of the `personList` field to generate a new a `Iterator<E>`.
 */
-    private List<Person> personList=new ArrayList<Person>();
-    public void add(Person person){
+    private List<T> personList=new ArrayList<T>();
+    public void add(T person){
         this.personList.add(person);
     }
 
-    public Person findById(long id){
+    public T findById(long id){
 
-        for (Person p:personList) {
-            if(p.getId()==id){
+        for (T p:personList) {
+             if(p.getId()==id){
                 return p;
             }
         }
         return null;
     }
 
-    public Boolean contains(Person person){
+    public Boolean contains(T person){
         return this.personList.contains(person);
     }
 
-    public void remove(Person person){
+    public void remove(T person){
         if(this.contains(person)){
             this.personList.remove(person);
         }
@@ -48,7 +48,7 @@ public class People implements Iterable<Person> {
     }
 
     public void remove(long id){
-        Person person=findById(id);
+        T person=findById(id);
         if(person!=null){
             this.personList.remove(person);
         }
@@ -58,16 +58,12 @@ public class People implements Iterable<Person> {
         this.personList.clear();
     }
 
-    public  Person[] toArray(){
-
-        return  this.personList.toArray(Person[]::new);
-
-    }
+    public abstract T[] toArray();
 
 
     @Override
-    public Iterator<Person> iterator() {
-        return new Iterator<Person>() {
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
 
             int curent=0;
             @Override
@@ -76,8 +72,8 @@ public class People implements Iterable<Person> {
             }
 
             @Override
-            public Person next() {
-                Person next=personList.get(curent);
+            public T next() {
+                T next=personList.get(curent);
                 curent++;
                 return next;
             }
@@ -85,12 +81,12 @@ public class People implements Iterable<Person> {
     }
 
     @Override
-    public void forEach(Consumer<? super Person> action) {
+    public void forEach(Consumer<? super T> action) {
 
     }
 
     @Override
-    public Spliterator<Person> spliterator() {
+    public Spliterator<T> spliterator() {
         return null;
     }
 }

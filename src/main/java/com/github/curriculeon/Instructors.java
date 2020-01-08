@@ -1,14 +1,13 @@
 package com.github.curriculeon;
 
-public class Instructors extends People{
+public class Instructors extends People<Instructor>{
     private static Instructors INSTANCE;
     private Instructors(){
-        String[] InstructorsNames = new String[]{"Leon", "Alli", "Lenny"};
-        for (long i = 0; i < InstructorsNames.length; i++) {
-            String instructorName = InstructorsNames[(int)i];
-            Instructor instructor = new Instructor(i, instructorName);
-            super.add(instructor);
-        }
+        super.add(Educator.LEON.getInstructor());
+        super.add(Educator.ALI.getInstructor());
+        super.add(Educator.LENNY.getInstructor());
+
+
     }
 
     public static Instructors getInstance() {
@@ -17,5 +16,18 @@ public class Instructors extends People{
         }
         INSTANCE = new Instructors();
         return INSTANCE;
+    }
+
+    @Override
+    public Instructor[] toArray() {
+        Instructor[] instructors=new Instructor[INSTANCE.count()];
+int i=0;
+            for (Instructor instr:INSTANCE) {
+                instructors[i]=instr;
+                i++;
+            }
+
+
+        return instructors;
     }
 }
