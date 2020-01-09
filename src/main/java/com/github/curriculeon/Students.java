@@ -1,5 +1,7 @@
 package com.github.curriculeon;
 
+import java.util.Iterator;
+
 public class Students extends People {
 
     private static final Students instance  = new Students() ;
@@ -19,5 +21,4 @@ public class Students extends People {
     public static Students getInstance() {
         return instance;
     }
-
 }

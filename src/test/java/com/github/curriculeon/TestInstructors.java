@@ -10,7 +10,6 @@ public class TestInstructors {
         String[] instructorList = new String[]{"Leon", "Ali", "Lenny"};
         //when
         Instructors instructors = Instructors.getInstance();
-        //Students students = Students.getInstance();
 
         // then
         for (int i=1; i<instructorList.length+1;i++) {

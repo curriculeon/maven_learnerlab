@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class People {
-    List<Person> personList = new ArrayList<Person>();
+public class People implements Iterable<Person> {
+    List<Person> personList = new ArrayList<>();
     public void add(Person person) {
         personList.add(person);
     }
@@ -38,7 +38,7 @@ public class People {
     }
 
     public Person[] toArray() {
-        return (Person[]) personList.toArray();
+        return personList.toArray(new Person[]{});
     }
 
     public Iterator<Person> iterator()  {
