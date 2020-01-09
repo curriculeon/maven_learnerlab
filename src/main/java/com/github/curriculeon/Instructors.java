@@ -1,6 +1,6 @@
 package com.github.curriculeon;
 
-public class Instructors extends People {
+public class Instructors extends People<Instructor> {
 
     private static final Instructors instance = new Instructors() ;
     private Instructors() {
@@ -15,6 +15,9 @@ public class Instructors extends People {
     }
     public static Instructors getInstance() {
         return instance;
+    }
+    public Instructor[] toArray() {
+        return instance.toArray();
     }
 
 }

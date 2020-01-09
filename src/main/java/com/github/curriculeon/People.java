@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class People implements Iterable<Person> {
-    List<Person> personList = new ArrayList<>();
-    public void add(Person person) {
+public abstract class People <E extends Person> implements Iterable<E> {
+    List<E> personList = new ArrayList<>();
+    public void add(E person) {
         personList.add(person);
     }
-    public Person findById(long id) {
-        for (Person person : personList ){
+    public E findById(long id) {
+        for (E person : personList ){
             if (person.getId() == id) {
                 return person;
             }
         }
         return null;
     }
-    public boolean contains(Person person) {
+    public boolean contains(E person) {
         return personList.contains(person);
     }
 
-    public void remove(Person person) {
+    public void remove(E person) {
         personList.remove(person);
     }
 
@@ -37,11 +37,9 @@ public class People implements Iterable<Person> {
         return personList.size();
     }
 
-    public Person[] toArray() {
-        return personList.toArray(new Person[]{});
-    }
+    public abstract E[] toArray();
 
-    public Iterator<Person> iterator()  {
+    public Iterator<E> iterator()  {
         return personList.iterator();
     }
 }

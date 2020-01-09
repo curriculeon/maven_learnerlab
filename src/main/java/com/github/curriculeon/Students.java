@@ -2,7 +2,7 @@ package com.github.curriculeon;
 
 import java.util.Iterator;
 
-public class Students extends People {
+public class Students extends People<Student> {
 
     private static final Students instance  = new Students() ;
     private Students() {
@@ -20,5 +20,9 @@ public class Students extends People {
     }
     public static Students getInstance() {
         return instance;
+    }
+
+    public Student[] toArray() {
+        return instance.toArray();
     }
 }

@@ -22,13 +22,14 @@ public class Classroom {
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
-        Person[] persons = students.toArray();
+        /*Person[] persons = students.toArray();
         Learner[] learners = new Learner[persons.length];
         for (int i = 0; i < persons.length; i++) {
             Person person = persons[i];
             Learner learner = (Learner)person;
             learners[i] = learner;
-        }
+        }*/
+        Learner[] learners = students.toArray();
         teacher.lecture(learners, numberOfHours);
 
 
