@@ -37,8 +37,8 @@ public class People {
         return personList.size();
     }
 
-    public void toArray() {
-        personList.toString();
+    public Person[] toArray() {
+        return (Person[]) personList.toArray();
     }
 
     public Iterator<Person> iterator()  {
