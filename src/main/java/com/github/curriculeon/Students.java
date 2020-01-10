@@ -23,6 +23,6 @@ public class Students extends People<Student> {
     }
 
     public Student[] toArray() {
-        return instance.toArray();
+        return super.personList.toArray(new Student[0]);
     }
 }

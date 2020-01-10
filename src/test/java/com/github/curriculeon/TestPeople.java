@@ -9,7 +9,12 @@ import java.util.List;
 public class TestPeople {
     //given
     public People test(Person... valuesToBeAdded) {
-        People myList = new People();
+        People myList = new People() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            }
+        };
 
         for (Person p :valuesToBeAdded) {
             myList.add(p);
