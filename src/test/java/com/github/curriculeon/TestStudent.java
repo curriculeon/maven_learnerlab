@@ -33,7 +33,7 @@ public class TestStudent {
         double expected = currentTotalStudyTime+100;
         double actual = student.getTotalStudyTime();
         // then
-        Assert.assertEquals(expected, actual, 0);
+        Assert.assertEquals(expected, actual, 1);
     }
 
 }

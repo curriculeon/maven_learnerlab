@@ -13,6 +13,7 @@ public class TestClassroom {
     public void testHostLecture() {
         //given
         Classroom classroom =  Classroom.getInstance();
+        Educator educator = Educator.LEON;
         for (Person s : classroom.getStudents()) {
             double currentTotalStudyTIme = ((Student)s).totalStudyTime;
             double addedStudyTime = 5;
@@ -22,12 +23,10 @@ public class TestClassroom {
 
         // when
         Map<Student, Double> beforeStudentMap = classroom.getStudyMap();
-        Person teacher = classroom.getInstructors().findById(1);
+        double currentTimeWorkd = educator.getTimeWorked();
+        // Person teacher = classroom.getInstructors().findById(1);
         double numberOfHours = 10;
-       // if (classroom.getInstructors().contains(teacher)) {
-         //   System.out.println("*****");
-            classroom.hostLecture((Teacher) teacher, numberOfHours);
-      //  }
+        classroom.hostLecture(educator, numberOfHours);
 
         //then
         double hoursToBeAddedToStudent = numberOfHours/classroom.getStudents().count();
@@ -36,6 +35,7 @@ public class TestClassroom {
             double beforeTotalStudyTimeForStudent = beforeStudentMap.get(s);
             Assert.assertEquals(beforeTotalStudyTimeForStudent+hoursToBeAddedToStudent, ((Student)s).getTotalStudyTime(), 0);
         }
+        Assert.assertEquals(currentTimeWorkd+numberOfHours, educator.getTimeWorked(),1);
     }
 
 }
