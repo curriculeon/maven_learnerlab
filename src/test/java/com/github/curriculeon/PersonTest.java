@@ -35,10 +35,13 @@ public class PersonTest {
         //given
         Person person = new Person(5L, "BOB");
         String newName = "Tom";
+        Assert.assertNotEquals("BOB", "Tom");
         
         //when
         person.setName("Tom");
         String actualName = person.getName();
+        
+        //then
         Assert.assertEquals(newName, actualName);
     }
     //End Methods
