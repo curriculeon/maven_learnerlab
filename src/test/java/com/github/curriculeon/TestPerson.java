@@ -1,5 +1,10 @@
 package com.github.curriculeon;
 
-public class TestPerson {
+import org.junit.Test;
 
+public class TestPerson {
+    @Test
+    public void name() {
+
+    }
 }
