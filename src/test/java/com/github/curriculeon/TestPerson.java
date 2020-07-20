@@ -11,6 +11,8 @@ public class TestPerson {
 
         // Then
         String actual = person.getName();
+        long actualId = person.getId();
+        Assert.assertEquals(1234567, actualId);
         Assert.assertEquals(expected, actual);
     }
 
