@@ -35,15 +35,22 @@ public class TestPerson {
     public void test0() {
         testConstructor(0, null);
     }
-
     @Test
     public void test1() {
-        testConstructor(1, "Monica");
+        testConstructor(1, "");
+    }
+    @Test
+    public void test2() {
+        testConstructor(-1, "Monica");
     }
 
     @Test
-    public void test2() {
-        testConstructor(2, "Deshmukh");
+    public void test3() {
+        testConstructor(Long.MAX_VALUE, "Deshmukh");
+    }
+
+    public void test4() {
+        testConstructor(Long.MIN_VALUE, "Deshmukh");
     }
 
 }
