@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestPerson {
-    @Test
     public void testConstructor(long expectedId, String expectedName) {
         Person person = new Person(expectedId, expectedName);
         long actualId = person.getId();
@@ -14,8 +13,8 @@ public class TestPerson {
     }
 
     @Test
-    public void testSetName(String name) {
-
-        person.setName(name);
+    public void test0() {
+        testConstructor(0, null);
     }
 }
+
