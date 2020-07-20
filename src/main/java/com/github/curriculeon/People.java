@@ -2,9 +2,10 @@ package com.github.curriculeon;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class People implements  Iterable<Person>  {
-    private ArrayList<Person> personList;
+    private List<Person> personList = new ArrayList<Person>();
 
     public void add(Person person){
         personList.add(person);
@@ -39,7 +40,11 @@ public class People implements  Iterable<Person>  {
         return personList.size();
     }
     public Person[] toArray(){
-        return (Person[]) personList.toArray();
+        Person[] tempPersonArray = new Person[personList.size()];
+        for (int i = 0; i < personList.size();i++)
+            tempPersonArray[i] = personList.get(i);
+
+        return  tempPersonArray;
     }
 
     @Override
