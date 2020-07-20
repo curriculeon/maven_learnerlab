@@ -1,6 +1,6 @@
 package com.github.curriculeon;
 
-public interface LearnerInterface {
+public interface Learner {
     long getId();
     String getName();
     void learn(double numberOfHours);
