@@ -10,11 +10,11 @@ public class Person {
     }
 
     public long getId(){
-        return id;
+        return this.id;
     }
 
-    public String getName(String name){
-        return name;
+    public String getName(){
+        return this.name;
     }
 
     public void setName (String name){
