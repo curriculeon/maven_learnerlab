@@ -1,19 +1,15 @@
 package com.github.curriculeon;
 
 public class Person {
-final long id;
+private final Long id;
 private String name;
 
-    public Person() {
-        id = 0;
-    }
-
-    public Person(long id, String name) {
+    public Person(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
