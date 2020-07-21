@@ -32,4 +32,9 @@ public class TestPerson {
     public void test1(){
         testSetName("Marcus Katalenas");
     }
+
+    @Test
+    public void test2(){
+        testSetName("");
+    }
 }
