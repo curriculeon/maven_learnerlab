@@ -1,16 +1,17 @@
 package com.github.curriculeon;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class Instructors extends People <Instructor> {
-    final static Instructors INSTANCE = new Instructors();
-    public People<Instructor> instructors;
+public final class Instructors extends People <Instructor> {
+    private final static Instructors INSTANCE = new Instructors();
+    private People<Instructor> instructors;
 
     private Instructors(){
-        final Instructor leon = new Instructor(Educator.LEON.getId(),Educator.LEON.getName());
-        final Instructor haseeb = new Instructor(Educator.HASEEB.getId(),Educator.HASEEB.getName());
+        final Instructor leon = new Instructor(Educator.Leon.getId(),Educator.Leon.getName());
+        final Instructor haseeb = new Instructor(Educator.Haseeb.getId(),Educator.Haseeb.getName());
         this.add(leon);
         this.add(haseeb);
     }
@@ -28,10 +29,5 @@ public class Instructors extends People <Instructor> {
             i++;
         }
         return tempArray ;
-    }
-
-    @Override
-    public void forEach(Consumer<? super Instructor> action) {
-
     }
 }

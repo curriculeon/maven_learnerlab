@@ -20,7 +20,7 @@ public class TestStudent {
     @Test
     public void testInheritance() {
         // given
-        Object student = new Student(1234, "");
+        Student student = new Student(1234, "");
 
         // when
         Boolean outcome = student instanceof Person;
@@ -31,7 +31,7 @@ public class TestStudent {
     @Test
     public void testImplementation() {
         //given
-        Object student = new Student(0,"");
+        Student student = new Student(0,"");
         //when
         boolean outcome = student instanceof Learner;
         //then

@@ -3,10 +3,19 @@ package com.github.curriculeon;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Classroom {
-    Students students = Students.getINSTANCE();
-    Instructors instructors = Instructors.getINSTANCE();
+public class Classroom  {
+    Students students;
+    Instructors instructors;
 
+    public Classroom(){
+        this(Students.getINSTANCE(),Instructors.getINSTANCE());
+    }
+
+    public Classroom(Students students, Instructors instructors) {
+        this.students = students;
+        this.instructors = instructors;
+
+    }
 
     public void hostLecture(Teacher teacher, double numOfHours){
         teacher.lecture(students.toArray(),numOfHours);

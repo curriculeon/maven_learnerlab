@@ -1,5 +1,6 @@
 package com.github.curriculeon;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.function.Consumer;
@@ -31,13 +32,4 @@ public final class Students extends People<Student> {
         return tempArray ;
     }
 
-    @Override
-    public void forEach(Consumer<? super Student> action) {
-
-    }
-
-    @Override
-    public Spliterator<Student> spliterator() {
-        return null;
-    }
 }

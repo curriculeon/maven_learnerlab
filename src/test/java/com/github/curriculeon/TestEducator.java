@@ -8,7 +8,7 @@ public class TestEducator {
     @Test
     public void testConstructor(){
         Instructors instructors = Instructors.getINSTANCE();
-        Educator educator = Educator.HASEEB;
+        Educator educator = Educator.Haseeb;
         double actual = educator.getTimeWorked();
         Assert.assertEquals(actual,0.0,0.0);
 

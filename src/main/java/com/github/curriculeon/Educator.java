@@ -1,16 +1,16 @@
 package com.github.curriculeon;
 
 public enum Educator implements Teacher{
-    LEON ( 1,"Leon",0),
-    HASEEB(2,"Haseeb",0);
+    Leon(0.0),
+    Haseeb(0.0);
     private final long id;
     private final String name;
     private final Instructor teacher;
     private double timeWorked = 0;
 
-    Educator(long id, String name,double timeWorked) {
-        this.id = id;
-        this.name = name;
+    Educator(double timeWorked) {
+        this.id = this.ordinal();
+        this.name = this.name();
         teacher = new Instructor(id,name);
     }
 

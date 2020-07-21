@@ -10,11 +10,6 @@ public class TestPeople extends People<Person> {
         // When
         ArrayList<Person> expected = new ArrayList<Person>();
         expected.add(person1); expected.add(person2); expected.add(person3);
-
-
-
-
-
         //Then
         this.add(person1); this.add(person2); this.add(person3);
 
