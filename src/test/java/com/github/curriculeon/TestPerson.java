@@ -20,14 +20,14 @@ import java.util.Date;
  */
 public class TestPerson {
     private void testConstructor(long expectedId, String expectedName) {
-
+        //given: expectedId, expectedName
         // When
         Person person = new Person(expectedId, expectedName);
 
-        // Then
+
         long actualId = person.getId();
         String actualName = person.getName();
-
+        //then
         Assert.assertEquals(expectedId, actualId);
         Assert.assertEquals(expectedName, actualName);
     }
