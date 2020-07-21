@@ -8,11 +8,11 @@ public class TestStudents {
     public void test(){
         Students students = Students.getINSTANCE();
         String expected = "Marucs";
-        String actual = students.students.findById(1).getName();
+        String actual = students.findById(1).getName();
         Assert.assertEquals("Marcus",actual);
-        actual = students.students.findById(2).getName();
+        actual = students.findById(2).getName();
         Assert.assertEquals("Yuru",actual);
-        actual = students.students.findById(3).getName();
+        actual = students.findById(3).getName();
         Assert.assertEquals("David",actual);
 
 
