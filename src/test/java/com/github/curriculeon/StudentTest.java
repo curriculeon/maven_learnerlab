@@ -5,44 +5,43 @@ import org.junit.Test;
 
 public class StudentTest {
 
-    public Boolean testImplementation() {
+    @Test
+    public void testImplementation() {
+        //given
+        Learner student = new Student();
 
-        Student student = new Student();
-        return (student instanceof Learner);
+        //when
+        Boolean result = student instanceof Person;
+
+        //then
+        Assert.assertTrue(result);
     }
 
-    public Boolean testInheritance() {
+    @Test
+    public void testInheritance() {
 
-        Student student = new Student();
-        return (student instanceof Person);
+        //given
+        Learner student = new Student();
+
+        //when
+        Boolean result = student instanceof Person;
+
+        //then
+        Assert.assertTrue(result);
     }
 
-    public void testLearn(Double expectedTotalStudyTime, Double actualNumberOfHours, Student student) {
+    @Test
+    public void testLearn() {
+        //given
+        Learner student = new Student();
+        Double actualNumberOfHours = 98D;
+
+        //when
         student.learn(actualNumberOfHours);
         Double actualTotalStudyTime = student.getTotalStudyTime();
+
+        //then
+        Double expectedTotalStudyTime = 98D;
         Assert.assertEquals(actualTotalStudyTime, expectedTotalStudyTime);
     }
-
-    @Test
-    public void testLearn0() {
-        Student student = new Student();
-        testLearn(7D, 7D, student);
-    }
-
-    @Test
-    public void testLearn1() {
-        Student student = new Student(5D);
-        testLearn(11D, 6D, student);
-    }
-
-    @Test
-    public void testImplementation0() {
-        testImplementation();
-    }
-
-    @Test
-    public void testInheritance0() {
-        testInheritance();
-    }
-
 }
