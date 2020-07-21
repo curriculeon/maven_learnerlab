@@ -18,7 +18,7 @@ public class TestInstructor {
     @Test
     public void testInheritance() {
         // given
-        Object instructor = new Instructor(1234, "");
+        Object instructor = new Instructor(1, "");
 
         // when
         Boolean output = instructor instanceof Person;
@@ -29,7 +29,7 @@ public class TestInstructor {
 
     public void testTeach(Learner learner,Double expected, Double numOfHours){
         // When
-        Instructor instructor = new Instructor(1234, "Name");
+        Instructor instructor = new Instructor(1, "Name");
         instructor.teach(learner,numOfHours);
 
         // Then
@@ -39,7 +39,7 @@ public class TestInstructor {
 
     public void testLecture(Learner[] learners,Double expected, Double numOfHours){
         // When
-        Instructor instructor = new Instructor(1234, "Name");
+        Instructor instructor = new Instructor(1, "Name");
         instructor.lecture(learners,numOfHours);
 
         // Then
@@ -50,15 +50,15 @@ public class TestInstructor {
 
     @Test
     public void test0(){
-        Student student = new Student(1234, "");
+        Student student = new Student(1, "");
         testTeach(student,5.0,5.0);
     }
 
     @Test
     public  void test1(){
-        Student student = new Student(1234, "");
-        Student student2 = new Student(1234, "");
-        Student student3 = new Student(1234, "");
+        Student student = new Student(1, "");
+        Student student2 = new Student(1, "");
+        Student student3 = new Student(1, "");
         Learner[] students = new Learner[3];
         students[0] = student;
         students[1] = student2;
