@@ -11,8 +11,19 @@ public class TestStudent {
         double expectedStudyTime = 6;
        Student student =  new Student(expectedId, expectedName);
        student.learn(expectedStudyTime);
-       student.getTotalStudyTime();
        double actualStudyTime = student.getTotalStudyTime();
         Assert.assertEquals(expectedStudyTime, actualStudyTime,123456789);
+    }
+
+    @Test
+    public void testInheritance() {
+        long expectedId = 123456789;
+        String expectedName = "John";
+        Student student = new Student(expectedId, expectedName);
+        long actualId = student.getId();
+        String actualName= student.getName();
+
+        Assert.assertEquals(expectedId, actualId);
+        Assert.assertEquals(expectedName, actualName);
     }
 }
