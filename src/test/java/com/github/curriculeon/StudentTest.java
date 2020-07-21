@@ -8,9 +8,7 @@ public class StudentTest extends TestCase {
     @Test
     public void  testInheritance(){
         //given
-        Long id=1L;
-        String name="some one";
-        Student student = new Student(id,name );
+        Student student = new Student(null,null);
 
         // when
         Boolean outcome = student instanceof Person;
@@ -23,9 +21,8 @@ public class StudentTest extends TestCase {
     @Test
     public void testLearn() {
         //given
-        Long id=1L;
-        String name="some one";
-        Student student = new Student(id,name );
+
+        Student student = new Student(null,null);
         Double numberOfHours=9.4;
         Double expected=student.getTotalStudyTime()+numberOfHours;
 
@@ -42,9 +39,7 @@ public class StudentTest extends TestCase {
     @Test
     public void testImplementation() {
         //given
-        Long id=1L;
-        String name="some one";
-        Student student = new Student(id,name );
+        Student student = new Student(null,null);
 
         // when
         Boolean outcome = student instanceof Learner;
