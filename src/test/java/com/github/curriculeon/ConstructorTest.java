@@ -6,24 +6,24 @@ import org.junit.Test;
 public class ConstructorTest {
 
 
-        private void test(String expected) {
-            // Given
-            Person person = new Person(2,"Bojangles");
-            // When
-            String actual = person.getName();
+    private void test(String expected) {
+        // Given
+        Person person = new Person(2,"Bojangles");
+        // When
+        String actual = person.getName();
 
-            // Then
-            Assert.assertEquals(expected, actual);
-        }
-
-
-        @Test
-        public void test1() {
-            test("Bojangles");
-        }
-
-
+        // Then
+        Assert.assertEquals(expected, actual);
     }
+
+
+    @Test
+    public void test1() {
+        test("Bojangles");
+    }
+
+
+}
 
 
 

@@ -1,7 +1,7 @@
 package com.github.curriculeon;
 
 public class Person {
-    final long id;
+    final Long id;
     public long getId() {
         return id;
     }

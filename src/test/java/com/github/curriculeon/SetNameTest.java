@@ -8,11 +8,11 @@ public class SetNameTest {
         // Given
         Person person = new Person(2,"Bojangles");
         // When
-      person.setName("Wendys");
+      person.setName(expected);
       String actual=person.getName();
 
         // Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected,actual);
     }
 
 
