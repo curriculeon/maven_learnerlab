@@ -51,10 +51,11 @@ public class TestStudent {
         long id = 1;
         String name = "Monica";
         Student student = new Student(id, name);
+        Double initialStudyHours = student.getTotalStudyTime();
         double expectedStudyHours = 10;
         //when
         student.learn(expectedStudyHours);
-        Double actualStudyTime = student.getTotalStudyTime();
+        Double actualStudyTime = initialStudyHours + student.getTotalStudyTime();
         //then
         Assert.assertEquals((Double)expectedStudyHours,actualStudyTime);
     }

@@ -64,6 +64,11 @@ public class TestInstructor {
         students[0] = new Student(1, "student1");
         students[1] = new Student(2, "student2");
         students[2] = new Student(3, "student3");
+        Double initialStudyTime = 0D;
+
+        for (Student s: students) {
+            initialStudyTime +=  s.getTotalStudyTime();
+        }
 
         Double expectedStudyTime = 10D;
 
@@ -72,9 +77,9 @@ public class TestInstructor {
 
         Double actualTotalStudyTime = 0D;
         for (Student s: students) {
-            actualTotalStudyTime += s.getTotalStudyTime();
+            actualTotalStudyTime +=  s.getTotalStudyTime();
         }
-        Double actualStudyTime = actualTotalStudyTime/students.length;
+        Double actualStudyTime = (initialStudyTime + actualTotalStudyTime)/students.length;
 
         //then
         Assert.assertEquals(actualStudyTime, expectedStudyTime);
