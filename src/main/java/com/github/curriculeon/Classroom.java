@@ -9,7 +9,7 @@ public class Classroom {
 
 
     public void hostLecture(Teacher teacher, double numOfHours){
-     teacher.lecture(students.toArray(),numOfHours);
+        teacher.lecture(students.toArray(),numOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours){

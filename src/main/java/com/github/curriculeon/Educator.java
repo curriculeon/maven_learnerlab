@@ -1,15 +1,17 @@
 package com.github.curriculeon;
 
 public enum Educator implements Teacher{
-    LEON ( 1,"Leon"),
-    HASEEB(2,"Haseeb");
+    LEON ( 1,"Leon",0),
+    HASEEB(2,"Haseeb",0);
+    private final long id;
+    private final String name;
     private final Instructor teacher;
     private double timeWorked = 0;
 
-    Educator(long id, String name) {
-       teacher = new Instructor(id,name);
-        Instructors instructors = Instructors.getINSTANCE();
-        instructors.add(teacher);
+    Educator(long id, String name,double timeWorked) {
+        this.id = id;
+        this.name = name;
+        teacher = new Instructor(id,name);
     }
 
     @Override
@@ -25,5 +27,13 @@ public enum Educator implements Teacher{
 
     public double getTimeWorked() {
         return timeWorked;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getId() {
+        return id;
     }
 }

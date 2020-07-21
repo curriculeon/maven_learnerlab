@@ -9,11 +9,10 @@ public class Instructors extends People <Instructor> {
     public People<Instructor> instructors;
 
     private Instructors(){
-        Instructor instructor1 = new Instructor(1, "Leon");
-        Instructor instructor2 = new Instructor(2, "Haseeb");
-
-        this.add(instructor1);
-        this.add(instructor2);
+        final Instructor leon = new Instructor(Educator.LEON.getId(),Educator.LEON.getName());
+        final Instructor haseeb = new Instructor(Educator.HASEEB.getId(),Educator.HASEEB.getName());
+        this.add(leon);
+        this.add(haseeb);
     }
 
     public static Instructors getINSTANCE() {
