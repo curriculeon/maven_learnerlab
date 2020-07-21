@@ -26,4 +26,21 @@ public class TestStudent {
         Assert.assertEquals(expectedId, actualId);
         Assert.assertEquals(expectedName, actualName);
     }
+
+    @Test
+    public void testLearn() {
+        //given
+        long id = 987654321;
+        String name = "Jane Doe";
+        double numberOfHours = 5;
+        //when
+        Student student = new Student(id, name);
+        student.learn(numberOfHours);
+        double totalStudyTime = student.getTotalStudyTime();
+        student.learn(numberOfHours);
+        double expectedNumberOfHours = numberOfHours + totalStudyTime;
+        double actualTotalNumberOfHours = student.getTotalStudyTime();
+        //then
+        Assert.assertEquals(expectedNumberOfHours, actualTotalNumberOfHours, 0l);
+    }
 }
