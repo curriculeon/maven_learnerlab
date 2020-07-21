@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 public class Instructors extends People <Instructor> {
     final static Instructors INSTANCE = new Instructors();
+    public People<Instructor> instructors;
 
     private Instructors(){
         Instructor instructor1 = new Instructor(1, "Leon");
@@ -21,7 +22,7 @@ public class Instructors extends People <Instructor> {
 
     @Override
     public Instructor[] toArray() {
-        Instructor[] tempArray = new Instructor[this.count()];
+        Instructor[] tempArray = new Instructor[this.instructors.count()];
         int i = 0;
         for (Instructor instructor : this) {
             tempArray[i] = instructor;

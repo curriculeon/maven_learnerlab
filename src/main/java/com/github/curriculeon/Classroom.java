@@ -7,13 +7,13 @@ public class Classroom {
     Students students = Students.getINSTANCE();
     Instructors instructors = Instructors.getINSTANCE();
 
+
     public void hostLecture(Teacher teacher, double numOfHours){
      teacher.lecture(students.toArray(),numOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours){
-      Instructor instructorToHostLecture = instructors.findById(id);
-       hostLecture(instructorToHostLecture, numberOfHours);
+      hostLecture(instructors.findById(id), numberOfHours);
  }
 
    public Map<Student,Double> getStudyMap(){
