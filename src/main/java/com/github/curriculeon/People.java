@@ -38,6 +38,6 @@ public class People<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return (Iterator<E>) personList.iterator();
+        return  (Iterator<E>) personList.iterator();
     }
 }
