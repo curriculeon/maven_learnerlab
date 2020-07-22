@@ -6,6 +6,10 @@ public class Student extends Person implements Learner {
     public Student(){
         super();
     }
+    public Student(Long id, String name){
+        super(id, name);
+    }
+
     public Student(Double numOfHours){
         super();
         learn(numOfHours);

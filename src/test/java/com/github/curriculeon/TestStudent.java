@@ -6,22 +6,23 @@ public class TestStudent {
 
     public void testImplementation(){
         //Given
-
-        //Where
-
-        //Then
         Student studentOne = new Student();
-        Assert.assertTrue(studentOne instanceof Learner);
+        //When
+        Boolean result = studentOne instanceof  Learner;
+        //Then
+
+        Assert.assertTrue(result);
 
     }
     public void testInheritance(){
         //Given
+        Student studentTwo = new Student();
 
         //Where
-
+        Boolean result = studentTwo instanceof  Person;
         //Then
-        Student studentTwo = new Student();
-        Assert.assertTrue(studentTwo instanceof Person);
+
+        Assert.assertTrue(result);
     }
     public void testLearn(Double expectedTimeToAdd){
         //Given
