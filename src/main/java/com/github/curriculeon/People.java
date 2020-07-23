@@ -19,7 +19,12 @@ The class should define a method named toArray which returns an array representa
 The class should implement Iterable<E> and define a method named iterator which makes use of the personList field to generate a new a Iterator<E>.
  */
 public class People implements Iterable<Person> {
-    ArrayList<Person> personList;
+    ArrayList<Person> personList =new ArrayList<Person>();
+
+    public People() {
+
+    }
+
 
     public void add(Person person) {
         this.personList.add(person);

@@ -12,15 +12,15 @@ incremented by the specified numberOfHours by invoking the .learn method.
  */
 public class StudentTest {
 
-    private void testImplementation(boolean tru) {
-        // Given
-        Learner student = new Student(2,"B.M.Quickly");
+        private void testImplementation(boolean tru) {
+            // Given
+            Learner student = new Student(2,"B.M.Quickly");
 
 
-        // Then
-        Assert.assertTrue(student instanceof Learner);
+            // Then
+            Assert.assertTrue(student instanceof Learner);
 
-    }
+        }
 
     private void testInheritance(boolean tru) {
         // Given
