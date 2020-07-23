@@ -19,13 +19,14 @@ Create a test method which ensures that each of the students in your current coh
 import java.util.ArrayList;
 
 public final class Students extends People {
+    ArrayList<Student> personList=new ArrayList<>();
     final static Students instance = new Students();
     String [] cohort = new String[]{"David","Chris","Marcus","Leon","Mondira","Deepti","Steve","Yuru","Monica","Akila","Julia","David","Alonzo","Rachid","Emmanuel","Lionel","Solomon","People who don't speak"};
    private Students(){
        super();
 
-     for(Person person:peopleMaker(cohort)){
-         this.personList.add(person);
+     for(Student student:peopleMaker(cohort)){
+         this.personList.add(student);
      }
    }
 
@@ -33,17 +34,32 @@ public final class Students extends People {
         return instance;
    }
 
-   public ArrayList<Person> peopleMaker(String[] names){
-       People people = new People();
+   public ArrayList<Student> peopleMaker(String[] names){
+      ArrayList<Student> stu =new ArrayList<>();
        for(int i =0;i<names.length;i++){
-           people.add(studentMaker(Long.valueOf(i+1), names[i]));
+           stu.add(studentMaker(Long.valueOf(i+1), names[i]));
        }
-       return people.personList;
+       return stu;
    }
 
-   public Person studentMaker(Long id,String name){
+   public Student studentMaker(Long id,String name){
        Person student =new Student(id,name);
 
        return new Student(id,name);
    }
+@Override
+    public Student[] toArr() {
+        Student[] p = new Student[this.personList.size() - 1];
+        for (int i = 0; i < p.length; i++) {
+            p[i] = this.personList.get(i + 1);
+        }
+        return p;
+    }
+    @Override
+    public Student findByID(Long id) {
+        for (Student student : this.personList) {
+            if (id == student.getId()) return  student;
+        }
+        return null;
+    }
 }

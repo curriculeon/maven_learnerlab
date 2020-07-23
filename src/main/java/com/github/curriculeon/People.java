@@ -34,11 +34,11 @@ public class People implements Iterable<Person> {
         this.personList=people;
     }
 
-    public Boolean findByID(Long id) {
+    public Person findByID(Long id) {
         for (Person person : this.personList) {
-            if (id == person.getId()) return true;
+            if (id == person.getId()) return person;
         }
-        return false;
+        return null;
     }
 
     public Boolean removePerson(Person person) {

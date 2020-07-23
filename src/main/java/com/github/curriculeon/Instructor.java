@@ -12,7 +12,7 @@ double numberOfHoursPerLearner = numberOfHours / learners.length;
 
  */
 public class Instructor extends Person implements Teacher {
-    Double numberOfHoursPerLearner;
+    Double numberOfHoursPerLearner =0.0;
 
     Instructor(long id, String name) {
         super(id, name);
@@ -25,7 +25,7 @@ public class Instructor extends Person implements Teacher {
 
     @Override
     public void lecture(Learner[] learners, Double numberOfHours) {
-        this.numberOfHoursPerLearner = numberOfHours / learners.length;
+        this.numberOfHoursPerLearner += numberOfHours;
         for (Learner learner : learners) {//I got this from Chris fulton
             this.teach(learner, numberOfHours);
         }

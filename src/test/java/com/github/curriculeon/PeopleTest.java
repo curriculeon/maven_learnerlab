@@ -47,11 +47,10 @@ public class PeopleTest {
     private void testFindByID(boolean tru) {
         // Given
         People people =new People(pp);
-        Boolean expected= true;
-
+        Person expected= p3;
         //When
 
-        Boolean actual=people.findByID(3L);
+        Person actual=people.findByID(3L);
 
 
         // Then

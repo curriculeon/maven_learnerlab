@@ -10,15 +10,16 @@ Student should have a getTotalStudyTime() method which returns the totalStudyTim
  */
 
 public class Student extends  Person implements Learner {
-Double totalStudyTime=0.0;
+Double totalStudyTime;
 
     Student(long id, String name) {
         super(id, name);
+        this.totalStudyTime=0.0;
     }
 
     @Override
     public void learn(Double numOfHours) {
-        this.totalStudyTime+=numOfHours;
+        this.totalStudyTime=this.totalStudyTime+numOfHours;
     }
 
     @Override
