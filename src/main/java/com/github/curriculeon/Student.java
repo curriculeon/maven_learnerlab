@@ -18,7 +18,7 @@ Double totalStudyTime;
     }
 
     @Override
-    public void learn(Double numOfHours) {
+    public  void learn(Double numOfHours) {
         this.totalStudyTime=this.totalStudyTime+numOfHours;
     }
 

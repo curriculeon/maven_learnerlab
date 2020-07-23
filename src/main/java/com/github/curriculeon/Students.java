@@ -49,15 +49,15 @@ public final class Students extends People {
    }
 @Override
     public Student[] toArr() {
-        Student[] p = new Student[this.personList.size() - 1];
+        Student[] p = new Student[this.personList.size()];
         for (int i = 0; i < p.length; i++) {
-            p[i] = this.personList.get(i + 1);
+            p[i] = this.personList.get(i);
         }
         return p;
     }
     @Override
     public Student findByID(Long id) {
-        for (Student student : this.personList) {
+        for (Student student : instance.personList) {
             if (id == student.getId()) return  student;
         }
         return null;
