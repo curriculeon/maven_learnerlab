@@ -2,6 +2,13 @@ package com.github.curriculeon;
 
 public class Instructor extends Person implements Teacher {
 
+    public Instructor() {
+    }
+
+    public Instructor(long id, String name) {
+        super(id, name);
+    }
+
     @Override
     public void teach(Learner learner, Double numberOfHours) {
         learner.learn(numberOfHours);
