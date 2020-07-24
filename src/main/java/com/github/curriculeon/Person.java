@@ -2,7 +2,7 @@ package com.github.curriculeon;
 
 public class Person {
 
-    private final Long id;
+    private final long id;
     private String name;
 
     public Person() {

@@ -9,7 +9,7 @@ public class Student extends Person implements Learner {
         this.totalStudyTime = 0D;
     }
 
-    public Student(Long id, String name, Double totalStudyTime) {
+    public Student(long id, String name, Double totalStudyTime) {
         super(id, name);
         this.totalStudyTime = totalStudyTime;
     }

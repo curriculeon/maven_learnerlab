@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.ListIterator;
 import java.lang.Iterable;
 
-public class People implements Iterable<Person> {
+public class People implements Iterable {
 
-    private List<Person> personList = new ArrayList<>();
+    List<Person> personList = new ArrayList<>();
 
     public People() {
     }
@@ -17,7 +17,7 @@ public class People implements Iterable<Person> {
         personList.add(person);
     }
 
-    public Person findById(Long id) {
+    public Person findById(long id) {
         for(Person person: personList) {
             if(person.getId() == id) {
                 return person;
