@@ -8,25 +8,25 @@ public class TestStudent {
     @Test
     public void testImplementation() {
         // given
-        Student student = new Student();
+        Student student = new Student(-1, null);
 
         // when
-        Boolean assertion = student instanceof Learner;
+        Boolean outcome = student instanceof Learner;
 
         // then
-        Assert.assertTrue(assertion);
+        Assert.assertTrue(outcome);
     }
 
     @Test
     public void testInheritance(){
         // given
-        Student student = new Student();
+        Student student = new Student(-1, null);
 
         // when
-       Boolean assertion = student instanceof Person;
+       Boolean outcome = student instanceof Person;
 
         // then
-        Assert.assertTrue(assertion);
+        Assert.assertTrue(outcome);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class TestStudent {
         double expectedNumberOfHours = 12D;
 
         // when
-        Student student = new Student();
+        Student student = new Student(-1, null);
         student.learn(expectedNumberOfHours);
         double actualTotalStudyTime = student.getTotalStudyTime();
 

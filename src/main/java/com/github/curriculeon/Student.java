@@ -3,7 +3,7 @@ package com.github.curriculeon;
 public class Student extends Person implements Learner {
     private double totalStudyTime;
 
-    public Student() {
+    public Student(long id, String name) {
         super(0,"some Name");
     }
 
