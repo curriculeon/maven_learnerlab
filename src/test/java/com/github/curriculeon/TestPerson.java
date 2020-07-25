@@ -15,7 +15,7 @@ public class TestPerson {
 
         //when
         //Giving the object we want to test, test when the constructor is called
-        Person person=new Person(expectedId, expectedName);
+        Person person = new Person(expectedId, expectedName);
         //Checking if actual output is same as expected
         String actualName=person.getName();
         Long actualId=person.getId();
