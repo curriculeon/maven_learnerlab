@@ -25,13 +25,17 @@ public class Classroom {
     }
     
     public void hostLecture(Teacher teacher, double numberOfHours) {
-        teacher.lecture((Student[]) students.toArray(), numberOfHours);
+        teacher.lecture(students.toArray(), numberOfHours);
     }
     
     public void hostLecture(long id, double numberOfHours) {
         instructors.findById(id).ifPresent(person -> {
-            person.lecture((Student[]) students.toArray(), numberOfHours);
+            person.lecture(students.toArray(), numberOfHours);
         });
+    }
+    
+    public void hostLecture(Educator teacher, double numberOfHours) {
+        teacher.lecture(students.toArray(), numberOfHours);
     }
     
     public Map<Student, Double> getStudyMap() {
