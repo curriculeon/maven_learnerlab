@@ -1,7 +1,7 @@
 package com.github.curriculeon;
 
 public class Person {
-    private final Long id;
+    private  Long id;
     private String name;
 
     public Person(Long id, String name) {
@@ -19,5 +19,9 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Person(){
+        this.id = null;
     }
 }
