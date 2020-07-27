@@ -68,6 +68,5 @@ public class InstructorTest {
         Arrays.asList(students).stream().forEach(student -> {
             Assert.assertEquals(student.getTotalStudyTime(), numberOfHoursPerStudent, .000001);
         });
-
     }
 }

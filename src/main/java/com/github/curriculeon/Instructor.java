@@ -7,6 +7,7 @@ public class Instructor extends Person implements Teacher {
     //Start Constructor
     public Instructor(long id, String name) {
         super(id, name);
+        Instructors.getInstance().add(this);
     }
     //End Constructor
 

@@ -8,6 +8,7 @@ public class Student extends Person implements Learner {
     //Start Constructor
     public Student(long id, String name) {
         super(id, name);
+        Students.getInstance().add(this);
     }
     //End Constructor
 
