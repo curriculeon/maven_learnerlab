@@ -1,15 +1,14 @@
 package com.github.curriculeon;
 
 public class Student extends Person implements Learner {
-    private Double totalStudyTime;
+    private Double totalStudyTime = 0.0;
 
-    public Student(Long id, String name, Double totalStudyTime) {
+    public Student(Long id, String name) {
         super(id, name);
-        this.totalStudyTime = totalStudyTime;
     }
 
     @Override
-    public void learn(double numberOfHours) {
+    public void learn(Double numberOfHours) {
         this.totalStudyTime += numberOfHours;
     }
 

@@ -7,14 +7,14 @@ public class Instructor extends Person implements Teacher {
     }
 
     @Override
-    public void tech(Learner learner, double numberOfHours) {
+    public void teach(Learner learner, Double numberOfHours) {
         learner.learn(numberOfHours);
     }
 
     @Override
-    public void lecture(Learner[] learners, double numberOfHours) {
+    public void lecture(Learner[] learners, Double numberOfHours) {
         for (Learner element : learners) {
-            element.learn(numberOfHours / learners.length);
+            teach(element, (numberOfHours / learners.length));
         }
     }
 

@@ -1,6 +1,5 @@
 package com.github.curriculeon;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,7 +7,7 @@ public class TestStudent {
     @Test
     public void testImplementation() {
         //Given
-       Student student = new Student(0L, "some Name", 1.1);
+       Student student = new Student(0L, "some Name");
 
         // When
         boolean assertion = student instanceof Learner;
@@ -20,7 +19,7 @@ public class TestStudent {
     @Test
     public void testInheritance() {
         //Given
-        Student student = new Student(0L, "some Name", 1.1);
+        Student student = new Student(0L, "some Name");
 
         // When
         boolean assertion = student instanceof Person;
@@ -28,17 +27,18 @@ public class TestStudent {
         // Then
         Assert.assertTrue(assertion);
     }
-    @Test
 
+    @Test
     public void testLearn() {
         //Given
-        Student student = new Student(0L, "some Name", 1.1);
+        Student student = new Student(0L, "some Name");
 
         // When
-        student.learn(2);
+        student.learn(2.0);
+        student.learn(2.0);
         double actualHours = student.getTotalStudyTime();
 
         // Then
-        Assert.assertEquals(3.1, actualHours,  0.001);
+        Assert.assertEquals(4.0, actualHours,  0.001);
     }
 }
