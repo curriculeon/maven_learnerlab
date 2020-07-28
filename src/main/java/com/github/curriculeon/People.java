@@ -21,10 +21,8 @@ public class People implements Iterable{
     }
 
     public Boolean contains(Person person) {
-        if (personList.contains(person)) {
-            return true;
-        } else
-            return false;
+        return personList.contains(person);
+
     }
 
     public void remove(Person person) {
@@ -36,9 +34,7 @@ public class People implements Iterable{
 
     public void removeById(long id) {
         Person person = findById(id);
-        if (personList.contains(person)) {
             personList.remove(person);
-        }
 
     }
 
