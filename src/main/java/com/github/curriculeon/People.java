@@ -9,58 +9,68 @@ import java.util.List;
 
 //Created class People
 
-public class People implements Iterable {
+public abstract class People<SomeLearnerType extends Person> implements Iterable<SomeLearnerType> {
 
     //Instantiated a List field of Person objects named personList
+//Only Declaration
+    List<SomeLearnerType> personList;
 
-    List<Person> personList = new ArrayList<>();
-
-    //method named add adding Person to personList
-    public void add(Person personToBeAdded) {
-        personList.add(personToBeAdded);
+    public People() {
+        this(new ArrayList<>());
     }
 
-//Method named findById using long id as parameter, returning Person object with respective id field
-    public Person findById(long id) {
-        for (Person person : personList) {
-            if (person.getId() == id) {
-                return person;
+    public People(List<SomeLearnerType> personList) {
+        this.personList = personList;
+    }
+
+    public void add(SomeLearnerType person) {
+        this.personList.add(person);
+    }
+
+    public SomeLearnerType findById(long id) {
+        for (int i = 0; i < personList.size(); i++) {
+            SomeLearnerType person = personList.get(i);
+            if (person.getId() == id) { //if the id is correct,
+                return person; // return person
+            } else { // if its the wrong id,
+                continue; // keep lookin'!
             }
-        }
-
-        return null;
+        } // finished loop; we've finished lookin'
+        return null; // we were not able to find the person with the id
     }
 
-    //Method named contains using Person person parameter to return true if personList contains respective Person object
-    public Boolean contains(Person person) {
-        return personList.contains(person);
+    public SomeLearnerType findByIdExpanded(long id) {
+        for (int i = 0; i < personList.size(); i++) {
+            SomeLearnerType person = personList.get(i);
+            if (person.getId() == id) { //if the id is correct,
+                return person; // return person
+            } else { // if its the wrong id,
+                continue; // keep lookin'!
+            }
+        } // finished loop; we've finished lookin'
+        return null; // we were not able to find the person with the id
     }
 
-    //Method named remove using Person person parameter to remove respective Person object
-    public void remove(Person person) {
-        personList.remove(person);
+    public Boolean contains(SomeLearnerType specifiedPerson) {
+        return personList.contains(specifiedPerson);
     }
 
-    //Method named removeAll clearing personList field
-    public void removeAll(Person person) {
+    public void remove(SomeLearnerType someSpecificPerson) {
+        personList.remove(someSpecificPerson);
+    }
+
+    public void removeAll() {
         personList.clear();
     }
 
-    //Method named count returning size of personList
-    public int count(){
+    public int count() {
         return personList.size();
     }
 
-    //method named toArray returning an array representation of personList field
-    public Person[] toArray(){
-       return personList.toArray(new Person[personList.size()]);
-    }
+    abstract public SomeLearnerType[] toArray();
 
-     //class implementing Iterable<E> and defining a method named iterator which makes use of personList field to generate new Iterator<E>
     @Override
-    public Iterator iterator() {
+    public Iterator<SomeLearnerType> iterator() {
         return personList.iterator();
     }
 }
-
-
