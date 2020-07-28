@@ -33,6 +33,13 @@ public class People implements Iterable<Person>{
         }
         return null;    //person with id not found
     }
+
+
+    /* findById using stream*/
+   /** public Person findById(long id) {
+       return personList.stream().filter(person -> person.getId() == id).findFirst().get();
+     }*/
+
     /*
      * The class should define a method named contains which makes use of
      * a Person person parameter to return true if the personList contains the respective Person object.
