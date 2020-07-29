@@ -42,16 +42,13 @@ public class People implements Iterable {
         return personList.size();
     }
 
-    public void toArray() {
-        personList.toArray();
-    }
+   // public void toArray() { personList.toArray(); }
 
     @Override
     public Iterator<Person> iterator() {
         return personList.listIterator();
         //return new PersonIterator<Person>(personList.iterator());
     }
-
 
 
 

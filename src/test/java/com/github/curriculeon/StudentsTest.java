@@ -15,8 +15,7 @@ public class StudentsTest {
         String expectedStudentName3 = "Brad Singer";
 
         //when
-        Students instance = Students.getINSTANCE();
-        People cohort = instance.getCohort();
+        Students cohort = Students.getINSTANCE();
 
         String actualStudentName1 = cohort.findById(555).getName();
         String actualStudentName2 = cohort.findById(777).getName();

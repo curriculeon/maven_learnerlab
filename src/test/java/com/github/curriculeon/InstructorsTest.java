@@ -16,8 +16,7 @@ public class InstructorsTest {
         String expectedInstructorName1 = "Lincoln Barnes";
 
         //when
-        Instructors instance = Instructors.getINSTANCE();
-        People instructors = instance.getInstructors();
+        Instructors instructors = Instructors.getINSTANCE();
 
         String actualInstructorName1 = instructors.findById(444).getName();
 
