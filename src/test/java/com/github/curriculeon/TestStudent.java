@@ -20,7 +20,7 @@ public class TestStudent {
     @Test
     public void testImplementation() {
         //given a studentObject
-        long id = 1;
+        long id = 5;
         String name = "Monica";
         Student studentObject = new Student(id,name);
 
@@ -34,7 +34,7 @@ public class TestStudent {
     @Test
     public void testInheritance() {
         //given a student object
-        long id = 1;
+        long id = 5;
         String name = "Monica";
         Student studentObject = new Student(id,name);
 
@@ -48,7 +48,7 @@ public class TestStudent {
     @Test
     public void testLearn(){
         //given a student object
-        long id = 1;
+        long id = 5;
         String name = "Monica";
         Student student = new Student(id, name);
         Double initialStudyHours = student.getTotalStudyTime();

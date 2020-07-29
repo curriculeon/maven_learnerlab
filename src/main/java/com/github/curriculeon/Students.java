@@ -14,18 +14,41 @@ package com.github.curriculeon;
 /**
  * Implemented By Monica Deshmukh 07/24/2020
  */
+/**
+ * * Modify the Students class signature to ensure that it is a subclass of People of parameterized type Student.
+ */
+
+import java.util.List;
+
+/**
+ * Implemented by Monica Deshmukh
+ * 07/28/2020
+ */
 public class Students extends People{
     private static final Students INSTANCE = new Students();
     private Students() {
-        this.add(new Person(1, "student1"));
-        this.add(new Person(2, "student2"));
-        this.add(new Person(3, "student3"));
+        this.add(new Student(1, "student1"));
+        this.add(new Student(2, "student2"));
+        this.add(new Student(3, "student3"));
     }
 
     public static Students getInstance() {
 
         return INSTANCE;
     }
+
+    @Override
+    public Student[] toArray() {
+        //return INSTANCE.toArray();
+        //should return the list personList in people class as an array
+        //The personList (which is of type E) should be copied into StudentList of type Student.
+        //Then convert list toArray and return the array.
+        Student[] studentArray = new Student[personList.size()];//should make a method in Person class to retrun personList.size()
+        List<Student> studentList = personList;
+        studentList.toArray(studentArray);
+        return studentArray;
+  }
+
 }
 
 

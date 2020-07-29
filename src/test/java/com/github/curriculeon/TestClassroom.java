@@ -33,7 +33,8 @@ public class TestClassroom {
             // search  for value
              initialStudyHours = initialMap.get(student);
             studyHoursAfterLecture = mapAfterHostLecture.get(student);
-            Assert.assertEquals((initialStudyHours+ numberOfHoursStudied), studyHoursAfterLecture);
+            double expectedStudeyHours = initialStudyHours+ numberOfHoursStudied;
+            Assert.assertEquals((long)expectedStudeyHours, (long)studyHoursAfterLecture);
         }
     }
 }

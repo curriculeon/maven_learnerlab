@@ -8,8 +8,8 @@ public class TestInstructors {
     public void testInstructors(){
         //given
         Instructors instructors = Instructors.getInstance();
-        Person[] instructorsExpected = {new Person(11, "instructor1"),
-                                        new Person(12, "instructor2")};
+        Instructor[] instructorsExpected = {new Instructor(11, "instructor1"),
+                                        new Instructor(12, "instructor2")};
 
         //when
         Person[] instructorsActual = instructors.toArray();

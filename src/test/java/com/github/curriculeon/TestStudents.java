@@ -15,15 +15,17 @@ public class TestStudents {
     public void testStudents() {
         //given
         Students students = Students.getInstance();
-        Person[] studentCohort = {  new Person(1, "student1"),
-                                    new Person(2, "student2"),
-                                    new Person(3, "student3")};
+       /* Student[] studentCohort = {  new Student(1, "student1"),
+                                    new Student(2, "student2"),
+                                    new Student(3, "student3")};*/
         //when
-        Person[] studentArray = students.toArray();
+        //Person[] studentArray = students.toArray();
+        Student[] studentArray = students.toArray();
 
         //then
-        for (int i = 0; i< 3; i++){
-            Assert.assertEquals(studentArray[0].getId(), studentCohort[0].getId());
+        for (int i = 1; i<= 3; i++){
+            Assert.assertEquals(studentArray[i-1].getId(), i);
+            //Assert.assertEquals(studentArray[0].getId(), studentCohort[0].getId());
             //Assert.assertTrue(students.contains(studentCohort[i])); : physical Person objects are different, their properties are same
         }
     }

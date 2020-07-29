@@ -10,26 +10,48 @@ import java.util.*;
 /**
  * Create a People class.
 */
-public class People implements Iterable<Person>{
+
+/**
+ * Parameterize the People signature to enforce that it is a container for objects of type E
+ * such that E is a subclass of Person.
+ * Modify the class signature to declare this class abstract.
+ * An abstract class cannot be instantiated; Its concrete implementation is deferred to its subclass.
+ * Modify people field to enforce that is a container of objects of type E.
+ * Modify the add method to ensure that it handles object of type E.
+ * Modify the findById method to ensure that it returns an object of type E.
+ * Modify the getArray method signature by declaring it abstract of return type E.
+ * An abstract method is a subclass's contractual agreement to the deferment
+ * of an implementation of a respective method.
+ */
+
+/**
+ * Implemented by Monica Deshmukh 07/28/2020
+ */
+public abstract class People <E extends Person> implements Iterable<E>{
     /*
      * The class should instantiate a List field of Person objects named personList.
      */
-    List<Person> personList = new ArrayList<Person>();
+    List<E> personList;
+
+    public People() {
+        personList = new ArrayList<E>();
+    }
 
     /*
     * The class should define a method named add which adds a Person to the personList.
     */
-    public void add(Person person) {
-        personList.add(person);
+    public void add(E personType) {
+        personList.add(personType);
     }
     /*
      * The class should define a method named findById which makes use of
      * a long id parameter to return a Person object with the respective id field.
      */
-    public Person findById(long id) {
-        for (Person person: personList) {
-            if (person.getId() == id)
-                return person;
+    public E findById(long id) {
+        for (E personType: personList) {
+            //if (personList instanceof Person)
+                if (personType.getId() == id)
+                    return personType;
         }
         return null;    //person with id not found
     }
@@ -44,8 +66,8 @@ public class People implements Iterable<Person>{
      * The class should define a method named contains which makes use of
      * a Person person parameter to return true if the personList contains the respective Person object.
      */
-    public Boolean contains(Person person) {
-        if (personList.contains(person))
+    public Boolean contains(E personType) {
+        if (personList.contains(personType))
             return true;
         return false;
     }
@@ -53,9 +75,9 @@ public class People implements Iterable<Person>{
      *  The class should define a method named remove which makes use of
      *  * a Person person parameter to remove a respective Person object.
      */
-     public void remove(Person person) {
-        if (this.contains(person))
-            personList.remove(person);
+     public void remove(E personType) {
+        if (this.contains(personType))
+            personList.remove(personType);
     }
 
     /**
@@ -84,18 +106,14 @@ public class People implements Iterable<Person>{
      * which returns an array representation of the personList field.
      *
      */
-    public Person[] toArray() {
-        Person[] personArray = new Person[personList.size()];
-        personList.toArray(personArray);
-        return personArray;
-    }
+    public abstract E[] toArray();
 
     /**
      * * The class should implement Iterable<E> and define a method named iterator
      *  * which makes use of the personList field to generate a new a Iterator<E>.
      */
     @Override
-    public Iterator<Person> iterator() {
+    public Iterator<E> iterator() {
         return personList.iterator();
         //return null;
     }

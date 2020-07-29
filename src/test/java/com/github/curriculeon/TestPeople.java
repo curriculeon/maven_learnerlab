@@ -16,9 +16,10 @@ public class TestPeople {
    @Test
     public void testAdd() {
        //given
-       People people = new People();
+       //People people = new People();
+        People people = Students.getInstance();
 
-       //when
+        //when
        Person person1 = new Person(1, "person1");
        Person person2 = new Person(2, "person2");
        Person person3 = new Person(3, "person3");
@@ -35,7 +36,8 @@ public class TestPeople {
     @Test
     public  void testRemove() {
         //given
-        People people = new People();
+        //People people = new People();
+        People people = Instructors.getInstance();
 
         //when
         //add two persons to the list.
@@ -59,21 +61,30 @@ public class TestPeople {
     @Test
     public void testFindById() {
         //given
-        People people = new People();
-
+        //People people = new People();
+        People people = Students.getInstance();
         //when
-        Person person1 = new Person(1, "person1");
+        long id = 1;
+        /*Person person1 = new Person(1, "person1");
         Person person2 = new Person(2, "person2");
         Person person3 = new Person(3, "person3");
         people.add(person1);
         people.add(person2);
-        people.add(person3);
+        people.add(person3);*/
+        //then
+        Assert.assertTrue(people.contains(people.findById(id)));
+
+        //when
+        id = 4;
+        //then
+        Assert.assertFalse(people.contains(people.findById(id)));
+
+        //when
+        people = Instructors.getInstance();
+        id = 11;
 
         //then
-        Assert.assertEquals(person1,people.findById(1));
-        Assert.assertEquals(person2,people.findById(2));
-        Assert.assertEquals(person3,people.findById(3));
+        Assert.assertTrue(people.contains(people.findById(id)));
 
-        Assert.assertNotEquals(person1,people.findById(4));
     }
 }
