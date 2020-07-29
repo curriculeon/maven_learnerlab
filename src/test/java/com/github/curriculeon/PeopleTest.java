@@ -7,7 +7,7 @@ public class PeopleTest extends TestCase {
 
     public void testAdd() {
         //given
-        People people = new People();
+        People people = Instructors.getInstance();
         Person person1 = new Person();
         Person person2 = new Person();
         Assert.assertFalse(people.contains(person1));
@@ -24,7 +24,8 @@ public class PeopleTest extends TestCase {
 
     public void testFindById() {
         //given
-        People people = new People();
+        People people = Instructors.getInstance();
+        people.removeAll();
         Person expected = new Person(1L, null);
         Person person1 = new Person(2L, null);
         Person person2 = new Person(3L, null);
@@ -50,7 +51,7 @@ public class PeopleTest extends TestCase {
 
     public void testRemove() {
         //given
-        People people = new People();
+        People people = Instructors.getInstance();
         Person person1 = new Person();
         Person person2 = new Person();
 

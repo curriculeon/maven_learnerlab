@@ -12,7 +12,7 @@ public class ClassroomTest extends TestCase {
     public void testHostLecture() {
         //given
         Classroom classroom = Classroom.getInstance();
-        Teacher teacher = (Teacher) Instructors.getInstance().findById(1L);
+        Teacher teacher = Instructors.getInstance().findById(1L);
         Integer numberOfStudents = Students.getInstance().count();
         Double numberOfHoursToLecture = numberOfStudents.doubleValue();
         Double expectedHoursLearned = numberOfHoursToLecture / numberOfStudents;

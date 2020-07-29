@@ -20,21 +20,20 @@ public class Classroom {
 
 
     public void hostLecture(Teacher teacher, double numberOfHours){
-        teacher.lecture((Learner[]) students.toArray(),numberOfHours);
+        teacher.lecture( students.toArray(),numberOfHours);
 
     }
     public void hostLecture(long id, double numberOfHours){
-        Teacher instructor=(Teacher)instructors.findById(id);
-        instructor.lecture((Learner[]) students.toArray(),numberOfHours);
+        Instructor instructor=instructors.findById(id);
+        instructor.lecture( students.toArray(),numberOfHours);
     }
 
     public Map<Student,Double> getStudyMap(){
         Map<Student,Double> studentMap=new HashMap<>();
 
-        for(Person student1 : students.toArray()) {
-            Student student=(Student)student1;
-            Double studyTime =student.getTotalStudyTime();
-            studentMap.put(student,studyTime);
+        for(Student student1 : students.toArray()) {
+            Double studyTime =student1.getTotalStudyTime();
+            studentMap.put(student1,studyTime);
         }
         return studentMap;
     }
