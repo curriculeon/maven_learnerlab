@@ -31,10 +31,10 @@ public class Classroom {
 
     public Map<Long, Double> getStudyMap() {
         Map<Long, Double> map = new TreeMap<>();
-        ArrayList<Student> slist = students.personList;
-        for (Student stu : slist) {
-
-           map.put(stu.getId(),stu.getTotalStudyTime());
+        ArrayList<Person> slist = students.personList;
+        for (Person stu : slist) {
+            Student sts=(Student)stu;
+           map.put(stu.getId(),sts.getTotalStudyTime());
         }
         return map;
     }

@@ -10,14 +10,14 @@ Create a TestInstructors class.
 import java.util.ArrayList;
 
 public class Instructors extends People {
-    ArrayList<Instructor> personList=new ArrayList<Instructor>();
+ //   ArrayList<Instructor> personList=new ArrayList<Instructor>();
     final static Instructors instance = new Instructors();
     String [] cohort = new String[]{"Leon","Haseeb"};
     private Instructors(){
         super();
 
         for(Instructor instructor:peopleMaker(cohort)){
-            this.personList.add(instructor);
+            this.add(instructor);
         }
     }
 
@@ -40,8 +40,8 @@ public class Instructors extends People {
     }
     @Override
     public Instructor findByID(Long id) {
-        for (Instructor instructor : this.personList) {
-            if (id == instructor.getId()) return instructor;
+        for (Person instructor : this.personList) {
+            if (id == instructor.getId()) return (Instructor)instructor;
         }
         return null;
     }
