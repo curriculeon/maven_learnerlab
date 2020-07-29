@@ -18,15 +18,15 @@ The class should define a method named count which returns the size of personLis
 The class should define a method named toArray which returns an array representation of the personList field.
 The class should implement Iterable<E> and define a method named iterator which makes use of the personList field to generate a new a Iterator<E>.
  */
-public class People implements Iterable<Person> {
-    ArrayList<Person> personList =new ArrayList<Person>();
+abstract public class People <SomePerson extends Person>  implements Iterable<SomePerson> {
+    ArrayList<SomePerson> personList =new ArrayList();
 
     public People() {
 
     }
 
 
-    public void add(Person person) {
+    public void add(SomePerson person) {
         this.personList.add(person);
     }
 
@@ -34,19 +34,16 @@ public class People implements Iterable<Person> {
         this.personList=people;
     }
 
-    public Person findByID(Long id) {
-        for (Person person : this.personList) {
-            if (id == person.getId()) return person;
-        }
-        return null;
-    }
+ public SomePerson findByID(Long id) {
+     for (SomePerson person : this.personList) {
+         if (id == person.getId()) return person;
+     }
+     return null;
+ }
 
-    public Boolean removePerson(Person person) {
-        for (Person p : this.personList) {
-            if (person.equals(p)) this.personList.remove(p);
-            return true;
-        }
-        return false;
+
+    public Boolean removePerson(SomePerson person) {
+        return personList.remove(person);
 
     }
 
@@ -60,25 +57,25 @@ public class People implements Iterable<Person> {
     }
 
     public void removeAll() {
-        for (Person p : this.personList) this.personList.remove(p);
+        for (SomePerson p : this.personList) this.personList.remove(p);
     }
 
     public Integer sizeList() {
         return this.personList.size();
     }
 
-    public Person[] toArr() {
-        Person[] p = new Person[this.personList.size() - 1];
+  /*  public SomePerson[] toArr() {
+        SomePerson[] p = new SomePerson[this.personList.size() - 1];
         for (int i = 0; i < p.length; i++) {
             p[i] = this.personList.get(i + 1);
         }
         return p;
     }
-
+*/
     @Override
-    public Iterator<Person> iterator() {
+    public Iterator<SomePerson> iterator() {
         return personList.iterator();
-
-
     }
+
+    abstract public SomePerson[] toArray();
 }

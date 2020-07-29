@@ -15,7 +15,7 @@ import org.junit.Test;
 public class InstructorTest {
     private void testImplementation(boolean tru) {
         // Given
-        Teacher instructor = new Instructor(2,"B.M.Quickly");
+        Instructor instructor = new Instructor(2,"B.M.Quickly");
 
 
         // Then

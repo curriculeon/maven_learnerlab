@@ -18,13 +18,14 @@ public class PeopleTest {
     Person p2=new Person(2,"Larry");
     Person p3=new Person(3,"Gush");
     Person p4=new Person(4,"Dare");
-    ArrayList pp =new ArrayList <Person>(Arrays.asList(p1,p2,p3));
+    ArrayList pp =new ArrayList (Arrays.asList(p1,p2,p3));
+    People people= Instructors.getInstance();
+
 
 
     private void testAdd(boolean tru) {
 
         // Given
-       People people =new People(pp);
        people.add(p4);
 
 
@@ -35,27 +36,20 @@ public class PeopleTest {
 
     private void testRemove(boolean tru) {
         // Given
-        People people =new People(pp);
+
         people.removePerson(1L);
-
-
         // Then
-        Assert.assertTrue(people.personList.contains(p1));
+        Assert.assertFalse(people.personList.contains(p1));
 
     }
 
     private void testFindByID(boolean tru) {
         // Given
-        People people =new People(pp);
-        Person expected= p3;
-        //When
-
-        Person actual=people.findByID(3L);
-
+        String expected="Leon";
 
         // Then
 
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(people.findByID(1L).getName(),expected);
     }
 
 

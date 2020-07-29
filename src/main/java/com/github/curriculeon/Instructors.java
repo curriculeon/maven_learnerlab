@@ -9,7 +9,7 @@ Create a TestInstructors class.
 
 import java.util.ArrayList;
 
-public class Instructors extends People {
+public class Instructors extends People<Instructor> {
  //   ArrayList<Instructor> personList=new ArrayList<Instructor>();
     final static Instructors instance = new Instructors();
     String [] cohort = new String[]{"Leon","Haseeb"};
@@ -19,6 +19,16 @@ public class Instructors extends People {
         for(Instructor instructor:peopleMaker(cohort)){
             this.add(instructor);
         }
+    }
+
+    @Override
+    public Instructor[] toArray() {
+        Instructor[] p = new Instructor[this.personList.size()];
+        for (int i = 0; i < p.length; i++) {
+            p[i] = this.personList.get(i);
+        }
+        return p;
+
     }
 
     public static Instructors getInstance(){
@@ -38,11 +48,11 @@ public class Instructors extends People {
 
         return new Instructor(id,name);
     }
-    @Override
+   /* @Override
     public Instructor findByID(Long id) {
-        for (Person instructor : this.personList) {
+        for (Instructor instructor : this.personList) {
             if (id == instructor.getId()) return (Instructor)instructor;
         }
         return null;
-    }
+    }*/
 }

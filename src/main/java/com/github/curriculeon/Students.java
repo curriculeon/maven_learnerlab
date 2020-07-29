@@ -18,7 +18,7 @@ Create a test method which ensures that each of the students in your current coh
 
 import java.util.ArrayList;
 
-public final class Students extends People {
+public class Students extends People<Student> {
   //  ArrayList<Student> personList=new ArrayList<>();
     final static Students instance = new Students();
     String [] cohort = new String[]{"David","Chris","Marcus","Leon","Mondira","Deepti","Steve","Yuru","Monica","Akila","Julia","David","Alonzo","Rachid","Emmanuel","Lionel","Solomon","People who don't speak"};
@@ -29,7 +29,6 @@ public final class Students extends People {
          this.add(student);
      }
    }
-
    public static Students getInstance(){
         return instance;
    }
@@ -48,17 +47,17 @@ public final class Students extends People {
        return new Student(id,name);
    }
 @Override
-    public Student[] toArr() {
+public Student[] toArray() {
         Student[] p = new Student[this.personList.size()];
         for (int i = 0; i < p.length; i++) {
-            p[i] = (Student)this.personList.get(i);
+            p[i] = this.personList.get(i);
         }
         return p;
     }
     @Override
     public Student findByID(Long id) {
-        for (Person student : instance.personList) {
-            if (id == student.getId()) return  (Student)student;
+        for (Student student : instance.personList) {
+            if (id == student.getId()) return  student;
         }
         return null;
     }
