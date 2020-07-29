@@ -1,30 +1,43 @@
 package com.github.curriculeon;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class People implements Iterable{
-    List<Person> personList = new ArrayList<>();
+abstract public class People<SomeLearnerType extends Person> implements Iterable<SomeLearnerType>{
 
-    public void add(Person personToBeAdded) {
-        personList.add(personToBeAdded);
+    List<SomeLearnerType> personList;
+
+    public People() {
+        this(new ArrayList<>());
     }
 
-    public Person findById(long id) {
-        for (Person person : personList) {
-            if(person.getId() == id) {
-                return person;
+    public People(List<SomeLearnerType> personList) {
+        this.personList = personList;
+    }
+
+    public void add(SomeLearnerType personToBeAdded) {
+        this.personList.add(personToBeAdded);
+    }
+
+    public SomeLearnerType findById(long id) {
+        for (int i = 0; i < personList.size(); i++) {
+            SomeLearnerType person = personList.get(i);
+            if (person.getId() == id) { //if the id is correct,
+                return person; // return person
+            } else { // if its the wrong id,
+                continue; // keep lookin'!
             }
-        }
-        return null;
+        } // finished loop; we've finished lookin'
+        return null; // we were not able to find the person with the id
     }
 
-    public Boolean contains(Person personToBeFound) {
+    public Boolean contains(SomeLearnerType  personToBeFound) {
       return personList.contains(personToBeFound);
     }
 
-    public void remove(Person person) {
+    public void remove(SomeLearnerType  person) {
         personList.remove(person);
     }
 
@@ -41,7 +54,7 @@ public class People implements Iterable{
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<SomeLearnerType > iterator() {
         return personList.iterator();
     }
 }
