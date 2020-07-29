@@ -25,6 +25,7 @@ public class TestStudents {
         //then
         for (int i = 1; i<= 3; i++){
             Assert.assertEquals(studentArray[i-1].getId(), i);
+            //
             //Assert.assertEquals(studentArray[0].getId(), studentCohort[0].getId());
             //Assert.assertTrue(students.contains(studentCohort[i])); : physical Person objects are different, their properties are same
         }
