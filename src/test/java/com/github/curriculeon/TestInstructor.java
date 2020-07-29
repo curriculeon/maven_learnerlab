@@ -48,10 +48,10 @@ public class TestInstructor {
 
         //When
         instructor.lecture(learners, TotalNumberOfHours);
-        double actualNumberOfHoursPerLearner = student1.getTotalStudyTime();
 
         //Then
-        Assert.assertEquals(expectedNumberOfHoursPerLearner, actualNumberOfHoursPerLearner, 0.1);
+        for(Learner student : learners)
+            Assert.assertEquals(expectedNumberOfHoursPerLearner, student.getTotalStudyTime(), 0.1);
     }
 
 
