@@ -6,7 +6,7 @@
 	* [concrete classes](https://stackoverflow.com/questions/43224901/what-is-the-concrete-class-in-java)
 	* [enums](https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful)
 	* [generics](https://stackoverflow.com/questions/7815528/what-are-generics-in-java/7815579)
-* **Description** - To implement a system which abides by the interface displayed below.
+* **Description** - To implement a system which abides by the UML displayed below.
 
 <img src="./complete-uml.png">
 
