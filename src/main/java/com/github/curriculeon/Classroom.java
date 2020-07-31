@@ -13,7 +13,7 @@ public class Classroom {
     }
 
     public void hostLecture(Teacher teacher, Double numbersOfHours){
-        teacher.lecture((Learner[])students.toArray(), numbersOfHours);
+        teacher.lecture(students.toArray(), numbersOfHours);
 
     }
 
@@ -21,7 +21,7 @@ public class Classroom {
     public void hostLecture(Long id, Double numberOfHours){
         Person person = instructors.findById(id);
         Instructor instructor = (Instructor)person;
-        instructor.lecture((Learner[])students.toArray(), numberOfHours);
+        instructor.lecture(students.toArray(), numberOfHours);
     }
 
     public Map<Student, Double> getStudyMap(){

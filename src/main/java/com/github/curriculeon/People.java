@@ -5,35 +5,42 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class People implements Iterable{
-    List<Person> personList= new ArrayList<>();
-
-    public  void add(Person personToAdd){
-        personList.add(personToAdd);
-
+abstract class People<somePeople extends Person> implements Iterable{
+    List<somePeople> personList;
+    public People(){
+        new ArrayList<>();
     }
 
-    public  Person findById(Long id) {
-        for (Person person : personList) {
-            if (person.getId() == id) {
-                return person;
-            }
+    public People(List<somePeople> personList){
+        this.personList = personList;
+    }
+    public  void add(somePeople personToAdd){
+        personList.add(personToAdd);
+    }
 
+    public  somePeople findById(Long id) {
+        for (int i = 0; i < personList.size() ; i++) {
+            somePeople person = personList.get(i);
+            if (person.getId() == id){// check if the person exist.
+                return person;
+            }else {
+                continue; // keep looking until id is found
+            }
         }// for
         return null;
     }// findById
 
 
-    public boolean contains(Person person){
+    public boolean contains(somePeople person){
         return personList.contains(person); //returns true if the object passed contains person.
     }
 
-    public void remove(Person person) {
+    public void remove(somePeople person) {
         personList.remove(person);
     }
 
     public  void remove(Long id) {
-        for (Person person : personList) {
+        for (somePeople person : personList) {
             if (person.getId() == id) {
                 personList.remove(id);
             }
@@ -50,13 +57,10 @@ public class People implements Iterable{
         return personList.size();
     }
 
-    public Person[] toArray(){
-        return personList.toArray(new Person[personList.size()]);
-
-    }
+    abstract public somePeople[] toArray();
 
     @Override
-    public Iterator iterator(){
+    public Iterator<somePeople> iterator(){
         return personList.iterator();
     }
 }//class

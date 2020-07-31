@@ -13,11 +13,11 @@ public class TestInstructors {
         String expected = "Leon";
 
         //When
-        String actual = instructor.myInstructor.findById(01l).getName();
+        String actual = instructor.findById(01l).getName();
         //Then
 
         Assert.assertEquals(expected, actual);
-        actual = instructor.myInstructor.findById(02l).getName();
+        actual = instructor.findById(02l).getName();
         Assert.assertEquals("Christel", actual);
     }
 

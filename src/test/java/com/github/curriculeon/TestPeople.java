@@ -12,7 +12,7 @@ public class TestPeople {
     @Test
     public void testAdd(){
         //Given
-        People people = new People();
+        People people = Instructors.getINSTANCE();
 
         Person people1 = new Person();
         Person people2 = new Person();
@@ -31,7 +31,7 @@ public class TestPeople {
     @Test
     public void testRemove(){
         //Given
-        People people = new People();
+        People people = Instructors.getINSTANCE();
         Person people1 = new Person();
         Person people2 =new Person();
 
@@ -53,7 +53,7 @@ public class TestPeople {
     @Test
     public void testFindById() {
         //Given
-        People people = new People();
+        People people = Instructors.getINSTANCE();
         Person expected = new Person(22l, "Emmanuel");
         Person people2 =new Person(23l, "Johnson");
 

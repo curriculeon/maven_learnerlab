@@ -13,7 +13,7 @@ public class TestStudents {
 
 
         //Then
-         String actual = students.myColleagues.findById(15l).getName();
+         String actual = students.findById(15l).getName();
         //When
         Assert.assertEquals(expectedStudentName, actual);
     }
