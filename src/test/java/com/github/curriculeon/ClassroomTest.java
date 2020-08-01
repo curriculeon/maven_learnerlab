@@ -6,38 +6,31 @@ import org.junit.Assert;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
 
 public class ClassroomTest {
 
     @Test
     public void testHostLecture1() {
-        //given
-        double numHoursTaught = 21D;
-        Classroom classroom = new Classroom();
-        Map<Student, Double> studyMapBefore = (HashMap)(classroom.getStudyMap());
-        Double[] expectedHours = new Double[studyMapBefore.size()];
-        int studentCounter = 0;
-        for ( Map.Entry<Student, Double> entry : studyMapBefore.entrySet()) {
-            expectedHours[studentCounter] = entry.getValue() + numHoursTaught / studyMapBefore.size();
-            studentCounter++;
+        Classroom classroom = Classroom.INSTANCE;
+        Teacher teacher = Instructors.getINSTANCE().findById(444L);
+        Integer numberOfStudents = Students.getINSTANCE().count();
+        Double numberOfHoursToLecture = numberOfStudents.doubleValue();
+        Double expectedNumberOfHoursLearned = numberOfHoursToLecture / numberOfStudents;
+        Map<Student, Double> preStudyMap = classroom.getStudyMap();
+
+        // when
+        classroom.hostLecture(teacher, numberOfHoursToLecture);
+        Map<Student, Double> postStudyMap = classroom.getStudyMap();
+        Set<Student> keySet = postStudyMap.keySet();
+        for (Student student : keySet) {
+            Double preStudyTime = preStudyMap.get(student);
+            Double expectedStudyTime = preStudyTime + expectedNumberOfHoursLearned;
+            Double actualStudyTime = postStudyMap.get(student);
+
+            // then
+            Assert.assertEquals(expectedStudyTime, actualStudyTime);
         }
-
-        //when
-        //get the first instructor's id of the instructors in the classroom
-        long instructorId = 444;
-
-        classroom.hostLecture(instructorId, numHoursTaught);
-
-        Map<Student, Double> studyMapAfter = (HashMap)(classroom.getStudyMap());
-        Double[] actualHours = new Double[studyMapAfter.size()];
-        studentCounter = 0;
-        for ( Map.Entry<Student, Double> entry : studyMapAfter.entrySet()) {
-            actualHours[studentCounter] = entry.getValue();
-            studentCounter++;
-        }
-
-        //then
-        Assert.assertArrayEquals(actualHours, expectedHours);
-
     }
 }

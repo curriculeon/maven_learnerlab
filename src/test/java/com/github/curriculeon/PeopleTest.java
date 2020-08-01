@@ -13,7 +13,7 @@ public class PeopleTest {
         Person expectedPerson3 = new Person(5555L, "Sarah Kraut");
 
         //when
-        People personList = new People();
+        People personList = Instructors.getINSTANCE();
         personList.add(expectedPerson1);
         personList.add(expectedPerson2);
         personList.add(expectedPerson3);
@@ -31,7 +31,7 @@ public class PeopleTest {
         Person Person2 = new Person(7777L, "Cindy Weatherspoon");
         Person Person3 = new Person(5555L, "Sarah Kraut");
 
-        People personList = new People();
+        People personList = Instructors.getINSTANCE();
         personList.add(Person1);
         personList.add(Person2);
         personList.add(Person3);
@@ -58,7 +58,7 @@ public class PeopleTest {
         Person expectedPerson2 = new Person(7777L, "Cindy Weatherspoon");
         Person expectedPerson3 = new Person(5555L, "Sarah Kraut");
 
-        People personList = new People();
+        People personList = Students.getINSTANCE();
         personList.add(expectedPerson1);
         personList.add(expectedPerson2);
         personList.add(expectedPerson3);

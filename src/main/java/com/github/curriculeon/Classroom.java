@@ -1,20 +1,16 @@
 package com.github.curriculeon;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Iterator;
 
-public class Classroom {
+public enum Classroom {
 
-    People students = Students.getINSTANCE();
-    People instructors = Instructors.getINSTANCE();
+    INSTANCE;
+    private Students students = Students.getINSTANCE();
+    private Instructors instructors = Instructors.getINSTANCE();
 
     public void hostLecture(Teacher teacher, Double numberOfHours) {
-        Person[] studentArray = new Student[students.count()];
-        students.personList.toArray(studentArray);
-        teacher.lecture((Learner[])studentArray, numberOfHours);
+        teacher.lecture(students.getArray(), numberOfHours);
     }
 
     public void hostLecture(long id, Double numberOfHours) {
@@ -25,11 +21,9 @@ public class Classroom {
     }
 
     public Map<Student, Double> getStudyMap() {
-        Map<Student, Double> studentMap = new HashMap<Student, Double>();
-        Iterator cohortIterator = students.iterator();
-        while(cohortIterator.hasNext()) {
-            Student thisStudent = (Student)(cohortIterator.next());
-            studentMap.put(thisStudent, thisStudent.getTotalStudyTime());
+        Map<Student, Double> studentMap = new HashMap<>();
+        for(Student student: students.getArray()) {
+            studentMap.put(student, student.getTotalStudyTime());
         }
         return studentMap;
     }
