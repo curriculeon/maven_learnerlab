@@ -1,7 +1,7 @@
 package com.github.curriculeon;
 
-public class Instructors extends People {
-    private static final Instructors instance = new Instructors();
+public final class Instructors extends People {
+    private static final Instructors INSTANCE = new Instructors();
 
     public Instructors() {
         this.add(new Instructor(0L, "Leon"));
@@ -9,7 +9,7 @@ public class Instructors extends People {
     }
 
     public static Instructors getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
 }
