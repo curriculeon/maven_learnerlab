@@ -8,7 +8,12 @@ public class TestPeople {
     @Test
     public void testAdd() {
         // given
-        People people = new People();
+        People<Person> people = new People<Person>() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            }
+        };
         Person person1 = new Person();
         Person person2 = new Person();
         Person person3 = new Person();
@@ -31,7 +36,12 @@ public class TestPeople {
     @Test
     public void testRemove() {
         // given
-        People people = new People();
+        People<Person> people = new People<Person>() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            }
+        };
         Person person1 = new Person();
         Person person2 = new Person();
         Person person3 = new Person();
@@ -58,7 +68,12 @@ public class TestPeople {
     @Test
     public void testFindById() {
         // given
-        People people = new People();
+        People<Person> people = new People<Person>() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            }
+        };
         Person expected = new Person(0L, null);
         Person person2 = new Person(1L, null);
         Person person3 = new Person(2L, null);

@@ -1,16 +1,25 @@
 package com.github.curriculeon;
+import java.util.List;
 
-public class Students extends People {
+public class Students extends People<Student> {
 
 
     private static final Students INSTANCE = new Students();
 
     private Students() {
         super();
-        this.add(new Person(0L, "Steven"));
-        this.add(new Person(1L, "Greg"));
-        this.add(new Person(2L, "Joe"));
+        this.add(new Student(0L, "Steven"));
+        this.add(new Student(1L, "Greg"));
+        this.add(new Student(2L, "Joe"));
 
+    }
+
+    @Override
+    public Student[] toArray() {
+        int sizeOfArray = count();
+        Student[] destinationArray = new Student[sizeOfArray];
+        List<Student> sourceList = personList;
+        return sourceList.toArray(destinationArray);
     }
 
     public static Students getInstance() {

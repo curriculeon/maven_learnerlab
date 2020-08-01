@@ -1,36 +1,57 @@
 package com.github.curriculeon;
 
-import java.util.List;
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class People implements Iterable {
+/**
+ * Created by leon on 7/22/2020.
+ */
+abstract public class People<SomeLearnerType extends Person> implements Iterable<SomeLearnerType> {
+    List<SomeLearnerType> personList;
 
-    public List<Person> personList = new ArrayList<>();
-
-    public void add(Person person) {
-        personList.add(person);
+    public People() {
+        this(new ArrayList<>());
     }
 
-    public Person findById(long id) {
-        for (Person person : personList) {
-            if (person.getId() == id) {
-                return person;
+    public People(List<SomeLearnerType> personList) {
+        this.personList = personList;
+    }
+
+    public void add(SomeLearnerType person) {
+        this.personList.add(person);
+    }
+
+    public SomeLearnerType findById(long id) {
+        for (int i = 0; i < personList.size(); i++) {
+            SomeLearnerType person = personList.get(i);
+            if (person.getId() == id) { //if the id is correct,
+                return person; // return person
+            } else { // if its the wrong id,
+                continue; // keep lookin'!
             }
-        }
-        return null;
+        } // finished loop; we've finished lookin'
+        return null; // we were not able to find the person with the id
     }
 
-    public boolean contains(Person person) {
-        return personList.contains(person);
+    public SomeLearnerType findByIdExpanded(long id) {
+        for (int i = 0; i < personList.size(); i++) {
+            SomeLearnerType person = personList.get(i);
+            if (person.getId() == id) { //if the id is correct,
+                return person; // return person
+            } else { // if its the wrong id,
+                continue; // keep lookin'!
+            }
+        } // finished loop; we've finished lookin'
+        return null; // we were not able to find the person with the id
     }
 
-    public void remove(Person person) {
-        personList.remove(person);
+    public Boolean contains(SomeLearnerType specifiedPerson) {
+        return personList.contains(specifiedPerson);
     }
 
-    public void remove(long id) {
-        personList.remove(id);
+    public void remove(SomeLearnerType someSpecificPerson) {
+        personList.remove(someSpecificPerson);
     }
 
     public void removeAll() {
@@ -41,12 +62,10 @@ public class People implements Iterable {
         return personList.size();
     }
 
-    public Person[] toArray() {
-        return personList.toArray(new Person[personList.size()]);
-    }
+    abstract public SomeLearnerType[] toArray();
 
     @Override
-    public Iterator iterator() {
+    public Iterator<SomeLearnerType> iterator() {
         return personList.iterator();
     }
 }
