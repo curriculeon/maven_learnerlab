@@ -15,17 +15,13 @@ public class TestPeople {
         People people = Instructors.getINSTANCE();
 
         Person people1 = new Person();
-        Person people2 = new Person();
         Assert.assertFalse(people.contains(people1));
-        Assert.assertFalse(people.contains(people2));
 
         //When
         people.add(people1);
-        people.add(people2);
         //Then
 
         Assert.assertTrue(people.contains(people1));
-        Assert.assertTrue(people.contains(people2));
     }
 
     @Test

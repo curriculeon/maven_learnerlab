@@ -8,8 +8,8 @@ public class Instructors extends People<Instructor> {
 
 
     public Instructors(){
-        this.add( new Instructor(01l, "Leon"));
-        this.add(new Instructor (02l,"Christel"));
+        this.add( new Instructor(0l, "Leon"));
+        this.add(new Instructor (1l,"Christel"));
 
     }
 
