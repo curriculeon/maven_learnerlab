@@ -9,6 +9,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+*.plantuml
 
 # External tool builders
 .externalToolBuilders/
