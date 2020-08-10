@@ -8,7 +8,7 @@ public class TestPerson extends TestCase {
     @Test
     public void testConstructor() {
         //given & when
-        long expectedID = 1;
+        Long expectedID = 1L;
         String expectedName = "Ezra";
         Person guy = new Person(expectedID, expectedName);
         //then

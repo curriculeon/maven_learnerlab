@@ -5,17 +5,26 @@ import java.util.Iterator;
 import java.util.List;
 
 public class People implements Iterable<Person> {
-    private List<Person> personList = new ArrayList<Person>();
+    private List<Person> personList = new ArrayList<>();
 
     public void add(Person person){
         personList.add(person);
     }
 
     public Person findById(long id){
-        return personList.get((int) id);
+        try {
+            for(Person person : personList){
+                if(person.getId().equals(id)){
+                    return person;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Person not found!!!");
+        }
+        return null;
     }
 
-    public boolean contains(Person person){
+    public Boolean contains(Person person){
         return personList.contains(person);
     }
 
@@ -24,14 +33,14 @@ public class People implements Iterable<Person> {
     }
 
     public void remove(long id){
-        personList.remove((int)id);
+        personList.remove(findById(id));
     }
 
     public void removeAll(){
         personList.clear();
     }
 
-    public int count(){
+    public Integer count(){
         return personList.size();
     }
 
