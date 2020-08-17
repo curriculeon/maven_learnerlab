@@ -56,7 +56,7 @@ public class TestInstructor {
         Instructor instructor = new Instructor(0L, "some Name");
 
         Student[] students = {  new Student(0L, "Chris"),
-                                new Student(0L, "Chris"),
+                                new Student(0L, "Adam"),
                                 new Student(2L, "william")};
 
         Double numberOfHours = 12.0;
