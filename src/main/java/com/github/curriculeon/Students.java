@@ -1,6 +1,8 @@
 package com.github.curriculeon;
 
-public class Students extends People<Person> {
+import java.util.List;
+
+public class Students extends People<Student> {
     private static final Students instance = new Students();
 
     private Students(){
@@ -11,10 +13,8 @@ public class Students extends People<Person> {
     }
 
     @Override
-    public Person[] toArray() {
-        return super.toArray();
-
-        //        return personList.toArray(new Student[count()]);
+    public Student[] toArray() {
+        return personList.toArray(new Student[count()]);
     }
 
     public static Students getInstance(){

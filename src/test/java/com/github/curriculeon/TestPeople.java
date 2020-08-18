@@ -9,7 +9,7 @@ public class TestPeople {
     public void testAdd() {
         //Given
         Person person = new Person(null, null);
-        People<Person> people = new People<Person>();
+        People people = Instructors.getInstance();
         // When
         Assert.assertFalse(people.contains(person));
         people.add(person);
@@ -23,7 +23,7 @@ public class TestPeople {
     public void testRemove() {
         //Given
         Person person1 = new Person(1L, null);
-        People<Person> people1 = new People<Person>();
+        People people1 = Instructors.getInstance();
 
         // When
         people1.add(person1);
@@ -38,7 +38,7 @@ public class TestPeople {
     public void testFindById() {
         //Given
         Person person1 = new Person(1L, null);
-        People<Person> people1 = new People<Person>();
+        People people1 = Instructors.getInstance();
         people1.removeAll();
         // When
         people1.add(person1);
