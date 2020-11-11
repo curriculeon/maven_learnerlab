@@ -1,7 +1,7 @@
 package com.github.curriculeon.models;
 
 public class Person {
-    final Long id;
+    private final Long id;
     String name;
 
 
