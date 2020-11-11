@@ -6,17 +6,21 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestStudents {
+public class TestInstructors {
     @Test
     public void test() {
         // given
-        String[] nameArray = "Michal,C Avalo,Trevor,Neely Mann,Brandt Campbell,Brian Loveless".split(",");
+        String[] nameArray = "Leon Hunter,Fred Zirdung,David S".split(",");
         List<String> nameList = Arrays.asList(nameArray);
+
         // when
-        for(Student person : Students.getInstance()) {
+
+        Instructors instructorsSingleton = Instructors.getInstance();
+        for(Person person : instructorsSingleton) {
             String personName = person.getName();
             // then
             Assert.assertTrue(nameList.contains(personName));
         }
     }
+
 }
