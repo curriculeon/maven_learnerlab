@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="2" language="java" name="com.github.curriculeon.Person" project="maven.learnerlab" 
+  <class id="2" language="java" name="com.github.curriculeon.models.Person" project="maven.learnerlab"
     file="/maven.learnerlab/src/main/java/com/github/curriculeon/Person.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="189" width="127" x="642" y="340"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
