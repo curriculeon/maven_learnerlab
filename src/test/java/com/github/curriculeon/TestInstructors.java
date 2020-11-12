@@ -16,7 +16,7 @@ public class TestInstructors {
         // when
 
         Instructors instructorsSingleton = Instructors.getInstance();
-        for(Person person : instructorsSingleton) {
+        for(Instructor person : instructorsSingleton) {
             String personName = person.getName();
             // then
             Assert.assertTrue(nameList.contains(personName));

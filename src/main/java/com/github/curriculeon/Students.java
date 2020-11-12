@@ -22,9 +22,7 @@ public final class Students extends People<Student> {
 
     @Override
     public Student[] toArray() {
-        Student[] arrayToBePopulated = new Student[0];
-        Student[] populatedArray = personList.toArray(arrayToBePopulated);
-        return populatedArray;
+        return personList.toArray(new Student[0]);
     }
 }
 

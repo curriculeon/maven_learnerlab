@@ -7,7 +7,12 @@ public class TestPeople {
     @Test
     public void testAdd() {
         // given
-        People people = new People();
+        People<Person> people = new People<Person>() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            } // we are not testing this method so leaving it simple for now.
+        };
         Person personToAdd = new Person(null, null);
         Assert.assertFalse(people.contains(personToAdd));
 
@@ -21,7 +26,12 @@ public class TestPeople {
     @Test
     public void testRemove() {
         // given
-        People people = new People();
+        People<Person> people = new People<Person>() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            } // we are not testing this method so leaving it simple for now.
+        };
         Person preExistingPerson = new Person(null, null);
         people.add(preExistingPerson);
         Assert.assertTrue(people.contains(preExistingPerson));
@@ -36,7 +46,12 @@ public class TestPeople {
     @Test
     public void testFindById() {
         // given
-        People people = new People();
+        People<Person> people = new People<Person>() {
+            @Override
+            public Person[] toArray() {
+                return new Person[0];
+            } // we are not testing this method so leaving it simple for now.
+        };
         Long expectedId = Long.MAX_VALUE;
         Person expected = new Person(expectedId, null);
         people.add(expected);

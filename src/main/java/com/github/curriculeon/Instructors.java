@@ -15,4 +15,9 @@ public class Instructors extends People<Instructor> {
         }
         return INSTANCE;
     }
+
+    @Override
+    public Instructor[] toArray() {
+        return personList.toArray(new Instructor[0]);
+    }
 }
