@@ -22,4 +22,5 @@ public class Instructor extends Person implements Teacher {
             teach(learner, numberOfHoursPerLearner);
         }
     }
+
 }
