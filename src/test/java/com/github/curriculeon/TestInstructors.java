@@ -14,7 +14,6 @@ public class TestInstructors {
         List<String> nameList = Arrays.asList(nameArray);
 
         // when
-
         Instructors instructorsSingleton = Instructors.getInstance();
         for(Instructor person : instructorsSingleton) {
             String personName = person.getName();
