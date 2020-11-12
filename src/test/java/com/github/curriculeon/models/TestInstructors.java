@@ -11,7 +11,7 @@ import java.util.List;
 public class TestInstructors {
     @Test
     public void test() {
-        String[] nameArray = "Leon,Fred,David".split(",");
+        String[] nameArray = "Leon Hunter,Fred Zirdung,David Smelser".split(",");
         List<String> nameList = Arrays.asList(nameArray);
 
         for (Person person: Instructors.getInstance()) {

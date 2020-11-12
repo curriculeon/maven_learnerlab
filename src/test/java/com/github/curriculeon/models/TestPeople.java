@@ -5,9 +5,15 @@ import org.junit.Test;
 
 public class TestPeople {
 
+    People<Person> people = new People<Person>() {
+        @Override
+        public Person[] toArray() {
+            return this.personList.stream().toArray(Person[]::new);
+        }
+    };
+
     @Test
     public void testAdd() {
-        People people = new People();
         Person personToAdd = new Person(null,null);
         Assert.assertFalse(people.contains(personToAdd));
 
@@ -18,7 +24,6 @@ public class TestPeople {
 
     @Test
     public void testRemove() {
-        People people = new People();
         Person preExistingPerson = new Person(null,null);
         people.add(preExistingPerson);
         Assert.assertTrue(people.contains(preExistingPerson));
@@ -30,7 +35,6 @@ public class TestPeople {
 
     @Test
     public void testFindById() {
-        People people = new People();
         Long expectedId = Long.MAX_VALUE;
         Person expected = new Person(expectedId,null);
         people.add(expected);

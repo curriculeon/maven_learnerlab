@@ -4,11 +4,10 @@ import com.github.curriculeon.interfaces.Learner;
 
 public class Student extends Person implements Learner {
 
-    double totalStudyTime;
+    private double totalStudyTime;
 
     public Student(Long id, String name) {
         super(id, name);
-        this.totalStudyTime = getTotalStudyTime();
     }
 
     @Override
@@ -20,4 +19,5 @@ public class Student extends Person implements Learner {
     public Double getTotalStudyTime() {
         return totalStudyTime;
     }
+
 }
