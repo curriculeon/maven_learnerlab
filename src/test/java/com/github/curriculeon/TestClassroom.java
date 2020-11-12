@@ -1,12 +1,17 @@
 package com.github.curriculeon;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Map;
 import java.util.Set;
 
 public class TestClassroom {
+    @Before
+    public void init(){
+        Instructors.getInstance().personList.clear();
+    }
     @Test
     public void testHostLecture() {
         // given

@@ -1,26 +1,41 @@
 package com.github.curriculeon;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestEducator {
+    @Before
+    public void init(){
+        Instructors.getInstance().personList.clear();
+    }
+
+    //given
+    Educator educator1 = Educator.LEON;
+    Educator educator2 = Educator.FRED;
+    Educator educator3 = Educator.DAVID;
+    Instructor instructor1 = new Instructor((long)educator1.ordinal(), educator1.name());
+    Instructor instructor2 = new Instructor((long)educator2.ordinal(), educator2.name());
+    Instructor instructor3 = new Instructor((long)educator3.ordinal(), educator3.name());
+
     @Test
     public void testImplementation(){
-        //given
-        Educator educator = Educator.LEON;
+
         //when
-        boolean outcome = educator instanceof Teacher;
-        String name = educator.name();
+        Instructors.getInstance().personList.add(educator1.ordinal(), instructor1);
+        Instructors.getInstance().personList.add(educator2.ordinal(), instructor2);
+        Instructors.getInstance().personList.add(educator3.ordinal(), instructor3);
+
+        assert educator1 != null;
+
+        String name = educator1.name();
         //then
         Assert.assertEquals(Educator.LEON.name(), name);
-        Assert.assertTrue(outcome);
     }
 
     @Test
     public void testTeach(){
         //given
-        Educator educator = Educator.LEON;
-        Instructor instructor = new Instructor((long)educator.ordinal(), educator.name());
         Learner student = new Student(null, null);
         double numberOfHoursToTeach = 10;
         double preStudyTime = student.getTotalStudyTime();
@@ -28,7 +43,7 @@ public class TestEducator {
         //double expectedTimeWorked = 0.0;
         //expectedTimeWorked += numberOfHoursToTeach;
         //when
-        instructor.teach(student,numberOfHoursToTeach);
+        instructor1.teach(student,numberOfHoursToTeach);
         double actual = student.getTotalStudyTime();
         //double timeWorked = educator.getTimeWorked();
 
@@ -40,8 +55,6 @@ public class TestEducator {
     @Test
     public void testLecture() {
         // given
-        Educator educator = Educator.LEON;
-        Instructor instructor = new Instructor((long)educator.ordinal(), educator.name());
         Learner student1 = new Student(null, null);
         Learner student2 = new Student(null, null);
         Learner[] students = {student1, student2};
@@ -52,7 +65,7 @@ public class TestEducator {
         double expected2 = (preStudyTime2 + numberOfHoursToTeach) / students.length;
 
         // when
-        instructor.lecture(students, numberOfHoursToTeach);
+        instructor1.lecture(students, numberOfHoursToTeach);
         double actual1 = student1.getTotalStudyTime();
         double actual2 = student2.getTotalStudyTime();
 
