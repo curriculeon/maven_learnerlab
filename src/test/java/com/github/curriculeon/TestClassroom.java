@@ -11,9 +11,11 @@ public class TestClassroom {
     public void testHostLecture() {
         // given
         Classroom classroom = Classroom.INSTANCE;
+        Educator educator = Educator.LEON;
+        Instructor instructor = new Instructor((long)educator.ordinal(), educator.name());
         Instructors instructors = Instructors.getInstance();
         Students students = Students.getInstance();
-        Instructor teacherAsTeacher = instructors.findById(1L);
+        Instructor teacherAsTeacher = instructors.findById(instructor.getId());
         Map<Student, Double> preStudyMap = classroom.getStudyMap();
         Double numberOfHoursToTeach = 9999.0;
         Double expectedNumberOfHoursLearned = numberOfHoursToTeach / students.count();
