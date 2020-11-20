@@ -8,7 +8,7 @@ public class TestPeople {
     People<Person> people = new People<Person>() {
         @Override
         public Person[] toArray() {
-            return this.personList.stream().toArray(Person[]::new);
+            return (Learner[]) this.personList.stream().toArray(Person[]::new);
         }
     };
 
