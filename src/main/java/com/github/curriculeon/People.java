@@ -28,5 +28,33 @@ public class People {
         return false;
     }
 
+    public void remove(long id){
+        Person toRemove = findById(id);
 
+        if(toRemove != null){
+            personlist.remove(toRemove);
+        }
+        else{
+            System.out.println("ID not found in list");
+        }
+    }
+
+    public void removeAll(){
+        personlist.clear();
+    }
+
+    public int count(){
+        return personlist.size();
+    }
+
+    public Person[] toArray(){
+        Person[] x = new Person[personlist.size()];
+        int count = 0;
+
+        for (Person person: personlist) {
+            x[count] = person;
+            count++;
+        }
+        return x;
+    }
 }
