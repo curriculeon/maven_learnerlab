@@ -32,4 +32,22 @@ public class TestInstructor {
 
         Assert.assertEquals(expected, actual, 0);
     }
+
+    @Test
+    public void testLecture(){
+        Instructor leon = new Instructor(1, "Leon");
+
+        Student mary = new Student(1, "Mary");
+        Student jarek = new Student(2, "Jarek");
+        Student andrew = new Student(3, "Andrew");
+
+        Learner[] learners = {mary, jarek, andrew};
+
+        leon.lecture(learners, 9.0);
+
+        double expected = 3.0;
+        double actual = andrew.getTotalStudyTime();
+
+        Assert.assertEquals(expected, actual, 0.01);
+    }
 }
