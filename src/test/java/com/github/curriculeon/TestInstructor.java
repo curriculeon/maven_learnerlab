@@ -7,23 +7,23 @@ public class TestInstructor {
 
     @Test
     public void testImplementation(){
-        Instructor test = new Instructor(1, "Leon");
+        Instructor test = new Instructor(1L, "Leon");
 
         Assert.assertTrue(test instanceof Teacher);
     }
 
     @Test
     public void testInheritance(){
-        Instructor test = new Instructor(1, "Leon");
+        Instructor test = new Instructor(1L, "Leon");
 
         Assert.assertTrue(test instanceof Person);
     }
 
     @Test
     public void testTeach(){
-        Instructor leon = new Instructor(1, "Leon");
+        Instructor leon = new Instructor(1L, "Leon");
 
-        Student mary = new Student(1, "Mary");
+        Student mary = new Student(1L, "Mary");
 
         leon.teach(mary, 4.5);
 
@@ -35,11 +35,11 @@ public class TestInstructor {
 
     @Test
     public void testLecture(){
-        Instructor leon = new Instructor(1, "Leon");
+        Instructor leon = new Instructor(1L, "Leon");
 
-        Student mary = new Student(1, "Mary");
-        Student jarek = new Student(2, "Jarek");
-        Student andrew = new Student(3, "Andrew");
+        Student mary = new Student(1L, "Mary");
+        Student jarek = new Student(2L, "Jarek");
+        Student andrew = new Student(3L, "Andrew");
 
         Learner[] learners = {mary, jarek, andrew};
 

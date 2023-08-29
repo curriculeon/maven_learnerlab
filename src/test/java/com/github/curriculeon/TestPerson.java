@@ -17,11 +17,13 @@ public class TestPerson {
 
     @Test
     public void testSetName(){
-        Person test = new Person(1L, "Leon");
+        Person test = new Person(null, null);
+        String expected = "Noel";
+
+        Assert.assertNotEquals(test.getName(), expected);
 
         test.setName("Noel");
 
-        String expected = "Noel";
         String actual = test.getName();
 
         Assert.assertEquals(expected, actual);
