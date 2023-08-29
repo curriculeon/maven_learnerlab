@@ -6,7 +6,7 @@ import java.util.List;
 
 public class People implements Iterable<Person> {
 
-    List<Person> personlist = new ArrayList<>();
+    private List<Person> personlist = new ArrayList<>();
 
     public void add(Person person){
         personlist.add(person);
@@ -22,27 +22,15 @@ public class People implements Iterable<Person> {
     }
 
     public boolean contains(Person person){
-        for (Person x: personlist) {
-            if(x.equals(person)){
-                return true;
-            }
-        }
-        return false;
+        return personlist.contains(person);
     }
 
     public void remove(Person person){
         personlist.remove(person);
     }
 
-    public void removeById(Long id){
-        Person toRemove = findById(id);
-
-        if(toRemove != null){
-            personlist.remove(toRemove);
-        }
-        else{
-            System.out.println("ID not found in list");
-        }
+    public void remove(Long id){
+        remove(findById(id));
     }
 
     public void removeAll(){
@@ -54,14 +42,7 @@ public class People implements Iterable<Person> {
     }
 
     public Person[] toArray(){
-        Person[] x = new Person[personlist.size()];
-        int count = 0;
-
-        for (Person person: personlist) {
-            x[count] = person;
-            count++;
-        }
-        return x;
+        return personlist.toArray(new Person[0]);
     }
 
     @Override
