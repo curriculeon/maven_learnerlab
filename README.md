@@ -9,7 +9,7 @@
 		* [enums](https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful)
 		* [generics](https://stackoverflow.com/questions/7815528/what-are-generics-in-java/7815579)
 * **Description**
-	* To implement a system which abides by the UML displayed below. * Click [here](./README.md) to view the most up-to-date README.md
+	* To implement a system which abides by the UML displayed below. Click [here](./README.md) to view the most up-to-date README.md
 
 <img src="./docs/complete-uml2.png">
 
