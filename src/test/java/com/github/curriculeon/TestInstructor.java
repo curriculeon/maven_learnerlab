@@ -7,47 +7,67 @@ public class TestInstructor {
 
     @Test
     public void testImplementation(){
-        Instructor test = new Instructor(1L, "Leon");
+        //given
+        Instructor instructor = new Instructor(null, null);
 
-        Assert.assertTrue(test instanceof Teacher);
+        //when
+        boolean isTeacher = instructor instanceof Teacher;
+
+        //then
+        Assert.assertTrue(isTeacher);
     }
 
     @Test
     public void testInheritance(){
-        Instructor test = new Instructor(1L, "Leon");
+        //given
+        Instructor instructor = new Instructor(null, null);
 
-        Assert.assertTrue(test instanceof Person);
+        //when
+        boolean isPerson = instructor instanceof Person;
+
+        //then
+        Assert.assertTrue(isPerson);
     }
 
     @Test
     public void testTeach(){
-        Instructor leon = new Instructor(1L, "Leon");
+        //given
+        Student student = new Student(null, null);
+        Instructor instructor = new Instructor(null, null);
+        double preStudyTime = student.getTotalStudyTime();
+        double lectureTime = 10.0;
+        double expectedStudyTime = preStudyTime + lectureTime;
 
-        Student mary = new Student(1L, "Mary");
+        //when
+        instructor.teach(student, lectureTime);
+        double actualStudyTime = student.getTotalStudyTime();
 
-        leon.teach(mary, 4.5);
-
-        double expected = 4.5;
-        double actual = mary.getTotalStudyTime();
-
-        Assert.assertEquals(expected, actual, 0);
+        //then
+        Assert.assertEquals(expectedStudyTime, actualStudyTime, 0.001);
     }
 
     @Test
     public void testLecture(){
-        Instructor leon = new Instructor(1L, "Leon");
+        //given
+        Student student1 = new Student(null, null);
+        Student student2 = new Student(null, null);
+        Student student3 = new Student(null, null);
+        Student student4 = new Student(null, null);
+        Student[] students = new Student[]{student1, student2, student3, student4};
+        Instructor instructor = new Instructor(null, null);
+        double lectureTime = students.length;
+        double expectedStudyTime = lectureTime/ students.length;
+        for(Student student : students){
+            Assert.assertNotEquals(expectedStudyTime, student.getTotalStudyTime());
+        }
 
-        Student mary = new Student(1L, "Mary");
-        Student jarek = new Student(2L, "Jarek");
-        Student andrew = new Student(3L, "Andrew");
+        //when
+        instructor.lecture(students, lectureTime);
+        for(Student student : students) {
+            double actualStudyTime = student.getTotalStudyTime();
 
-        Learner[] learners = {mary, jarek, andrew};
-
-        leon.lecture(learners, 9.0);
-
-        double expected = 3.0;
-        double actual = andrew.getTotalStudyTime();
-
-        Assert.assertEquals(expected, actual, 0.01);
+            //then
+            Assert.assertEquals(expectedStudyTime, actualStudyTime, 0.001);
+        }
     }
 }
