@@ -1,10 +1,10 @@
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/5.1_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/5.1_tutorial.mp4">
 </video>
 
 
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/5.2_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/5.2_tutorial.mp4">
 </video>
 
 ### Part 7.1 - Create `Students` singleton
@@ -25,5 +25,5 @@
 
 
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/6_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/6_tutorial.mp4">
 </video>

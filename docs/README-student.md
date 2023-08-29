@@ -1,5 +1,5 @@
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/2_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/2_tutorial.mp4">
 </video>
 
 

@@ -13,7 +13,7 @@
 	* The class should implement `Iterable<E>` and define a method named `iterator` which makes use of the `personList` field to generate a new a `Iterator<E>`.
 
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/4.1_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/4.1_tutorial.mp4">
 </video>
 
 ### Part 6.0 - Test `People`
@@ -24,5 +24,5 @@
 
 
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/4.2_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/4.2_tutorial.mp4">
 </video>

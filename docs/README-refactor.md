@@ -26,7 +26,7 @@
 * Refactor the `hostLecture` method in the `Classroom` class by removing any intermediate _casting trick(s)_.
 
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/8.1_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/8.1_tutorial.mp4">
 </video>
 
 
@@ -36,5 +36,5 @@
 
 
 <video width="device-width" height="480" style="border:1px solid green" controls>
-  <source type="video/mp4" src="./docs/tutorial/9.2_tutorial.mp4">
+  <source type="video/mp4" src="./tutorials/9.2_tutorial.mp4">
 </video>
