@@ -7,27 +7,41 @@ public class TestStudent {
 
     @Test
     public void testImplementation(){
-        Student test = new Student(1L, "Andrew");
+        //given
+        Student student = new Student(null, null);
 
-        Assert.assertTrue(test instanceof Learner);
+        //when
+        boolean isLearner = student instanceof Learner;
+
+        //then
+        Assert.assertTrue(isLearner);
     }
 
     @Test
     public void testInheritance(){
-        Student test = new Student(1L, "Jarek");
+        //given
+        Student student = new Student(null, null);
 
-        Assert.assertTrue(test instanceof Person);
+        //when
+        boolean isPerson = student instanceof Person;
+
+        //then
+        Assert.assertTrue(isPerson);
     }
 
     @Test
     public void testLearn(){
-        Student test = new Student(1L, "Mary");
+        //given
+        Student student = new Student(null, null);
+        double preStudyTime = student.getTotalStudyTime();
+        double numberOfHours = 100.0;
+        double expectedTotalStudyTime = preStudyTime + numberOfHours;
 
-        test.learn(12.0);
+        //when
+        student.learn(numberOfHours);
 
-        double expected = 12.0;
-        double actual = test.getTotalStudyTime();
+        //then
+        Assert.assertEquals(expectedTotalStudyTime, student.getTotalStudyTime(), 0.001);
 
-        Assert.assertEquals(expected, actual, 0);
     }
 }

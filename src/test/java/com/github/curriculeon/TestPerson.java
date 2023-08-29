@@ -7,25 +7,32 @@ public class TestPerson {
 
     @Test
     public void testConstructor(){
-        Person test = new Person(1L, "Leon");
+        //given
+        Long expectedId = 10L;
+        String expectedName = "Leon";
 
-        String expected = "Leon";
-        String actual = test.getName();
+        //when
+        Person person = new Person(expectedId, expectedName);
+        Long actualId = person.getId();
+        String actualName = person.getName();
 
-        Assert.assertEquals(expected, actual);
+        //then
+        Assert.assertEquals(expectedId, actualId);
+        Assert.assertEquals(expectedName, actualName);
     }
 
     @Test
     public void testSetName(){
-        Person test = new Person(null, null);
-        String expected = "Noel";
+        //given
+        String expectedName = "Leon";
+        Person person = new Person(null, null);
+        Assert.assertNotEquals(expectedName, person.getName());
 
-        Assert.assertNotEquals(test.getName(), expected);
+        //when - the method that we are actually testing
+        person.setName(expectedName);
+        String actualName = person.getName();
 
-        test.setName("Noel");
-
-        String actual = test.getName();
-
-        Assert.assertEquals(expected, actual);
+        //then
+        Assert.assertEquals(expectedName, actualName);
     }
 }
