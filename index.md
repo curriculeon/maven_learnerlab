@@ -177,13 +177,14 @@
   <source type="video/mp4" src="./docs/tutorials/5.1_tutorial.mp4">
 </video>
 
-### Part 7.1 - What is a Singleton?
+### Part 7.1 - What is an Enum?
 
 <video width="device-width" height="480" style="border:1px solid green" controls>
   <source type="video/mp4" src="./docs/tutorials/5.2_tutorial.mp4">
 </video>
 
 ### Part 7.3 - Create `Students` singleton
+* **Note:** The creation of this class will demonstrate an implementation of [singleton design pattern](https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples#eager-initialization).
 * Create a `Students` class.
 	* The class should be an _unextendable_ subclass of the `People` class.
 	* The class should _statically instantiate_ a `final` field named `INSTANCE` of type `Students`.
