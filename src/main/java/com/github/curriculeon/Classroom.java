@@ -10,26 +10,18 @@ public enum Classroom {
     private Instructors instructors = Instructors.getInstance();
 
     public void hostLecture(Teacher teacher, double numberOfHours){
-        Person[] personArray = students.toArray();
-        Student[] studentArray = new Student[personArray.length];
-        for (int i = 0; i < personArray.length; i++) {
-            Person person = personArray[i];
-            Student student = (Student) person;
-            studentArray[i] = student;
-        }
+        Student[] studentArray = students.toArray();
         teacher.lecture(studentArray, numberOfHours);
     }
 
     public void hostLecture(Long id, double numberOfHours){
-        Person person = Instructors.getInstance().findById(id);
-        Teacher teacher = (Teacher) person;
+        Teacher teacher = Instructors.getInstance().findById(id);
         hostLecture(teacher, numberOfHours);
     }
 
     public Map<Student, Double> getStudyMap() {
         Map<Student, Double> map = new HashMap<>();
-        for(Person person : Students.getInstance().toArray()){
-            Student student = (Student) person;
+        for(Student student : Students.getInstance().toArray()){
             double numberOfHours = student.getTotalStudyTime();
             map.put(student, numberOfHours);
         }
