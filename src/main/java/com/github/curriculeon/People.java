@@ -3,6 +3,7 @@ package com.github.curriculeon;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 abstract public class People<PersonType extends Person> implements Iterable<PersonType> {
 
@@ -15,6 +16,15 @@ abstract public class People<PersonType extends Person> implements Iterable<Pers
     public PersonType findById(Long id){
         for (PersonType person: list) {
             if(person.getId() == id){
+                return person;
+            }
+        }
+        return null;
+    }
+
+    public PersonType findByName(String name) {
+        for(PersonType person : list) {
+            if(Objects.requireNonNull(name).equals(person.getName())) {
                 return person;
             }
         }
