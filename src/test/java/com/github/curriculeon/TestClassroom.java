@@ -6,12 +6,9 @@ import org.junit.Test;
 import java.util.Map;
 
 public class TestClassroom {
-
-    @Test
-    public void testHostLecture() {
+    public void testHostLecture(Teacher teacher) {
         //given
         Classroom classroom = Classroom.INSTANCE;
-        Teacher teacher = (Teacher) Instructors.getInstance().findById(1L);
         double numberOfHours = Students.getInstance().count();
         double hoursPerStudent = numberOfHours / Students.getInstance().count();
         Map<Student, Double> preStudyMap = classroom.getStudyMap();
@@ -31,5 +28,14 @@ public class TestClassroom {
         }
 
 
+    }
+    @Test
+    public void testHostLectureEducator() {
+        testHostLecture(Educator.LEON);
+    }
+
+    @Test
+    public void testHostLectureInstructor(){
+        testHostLecture(Instructors.getInstance().findById(1L));
     }
 }

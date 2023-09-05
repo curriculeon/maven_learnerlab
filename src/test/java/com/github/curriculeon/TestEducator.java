@@ -38,8 +38,9 @@ public class TestEducator {
         /*Student student1 = new Student(null, null);
         Student student2 = new Student(null, null);
         Student student3 = new Student(null, null);
-        Student student4 = new Student(null, null);*/
-        //Student[] students = new Student[]{student1, student2, student3, student4};
+        Student student4 = new Student(null, null);
+        Student[] students = new Student[]{student1, student2, student3, student4};*/
+        //SEE ALSO: Implementation in TestInstructor
         Student[] students = Students.getInstance().toArray();
         Educator educator = Educator.HUNTER;
         double lectureTime = students.length;
