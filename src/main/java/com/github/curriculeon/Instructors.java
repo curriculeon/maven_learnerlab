@@ -5,8 +5,8 @@ public final class Instructors extends People<Instructor> {
     private static final Instructors INSTANCE = new Instructors();
 
     private Instructors(){
-        this.add(new Instructor(1L, "Leon"));
-        this.add(new Instructor(2L, "Hunter"));
+        this.add(new Instructor(1L, "LEON"));
+        this.add(new Instructor(2L, "HUNTER"));
     }
 
     public static Instructors getInstance() {
