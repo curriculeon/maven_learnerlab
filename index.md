@@ -143,7 +143,7 @@
 	* The class should instantiate a `List` field of `Person` objects named `personList`.
 	* The class should define a method named `add` which adds a `Person` to the `personList`.
 	* The class should define a method named `findById` which makes use of a `long id` parameter to return a `Person` object with the respective `id` field.
-	* The class should define a named `contains` which makes use of a `Person person` parameter to return `true` if the `personList` contains the respective `Person` object.
+	* The class should define a method named `contains` which makes use of a `Person person` parameter to return `true` if the `personList` contains the respective `Person` object.
 	* The class should define a method named `remove` which makes use of a `Person person` parameter to remove a respective `Person` object.
 	* The class should define a method named `remove` which makes use of a `long id` parameter to remove a `Person` object with the respective `id` field.
 	* The class should define a named `removeAll` which clears our `personList` field.
